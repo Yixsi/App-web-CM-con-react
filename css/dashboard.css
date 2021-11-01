@@ -1,0 +1,204 @@
+body {
+    background: #f1f1f1;
+}
+
+.image {
+    width: 179px;
+}
+
+.barra {
+    background: #f4f4f4;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 5px;
+    margin: 0;
+}
+
+.barra2 {
+    background: #000;
+    padding-top: 3px;
+    padding-bottom: 0px;
+    padding-left: 5px;
+    margin: 0;
+}
+
+
+.dropdown-menu {
+    margin: 5px;
+    background: #252525;
+    padding-left: 0px;
+    padding-right: 0px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.568);
+}
+
+.menuperfil {
+    color: white;
+}
+
+.cerrar:hover {
+    background-color: #000;
+    color: orange;
+}
+
+.far {
+    font-size: 30px;
+    color: orange;
+}
+
+.far:hover {
+    color: black;
+}
+
+
+/*BARRA LATERAL*/
+
+.barra-lateral {
+    background: #252525;
+    color: #fff;
+    min-width: 160px;
+    min-height: 100vh;
+    padding: 0px;
+}
+
+.barra-lateral a {
+    color: #fff;
+    font-size: 25px;
+}
+
+
+/*ESTILOS MENU*/
+
+.barra-lateral .menu a {
+    display: block;
+    padding: 10px;
+    font-family: Roboto, sans-serif;
+    font-weight: 500;
+
+}
+
+.barra-lateral .menu a:hover {
+    color: #f6821f;
+    text-decoration: none;
+}
+
+.active {
+    background: #003C5D;
+}
+
+.barra-lateral .menu {
+    border-top: 0px;
+    margin-left: 20px;
+}
+
+.barra-lateral .menu a i {
+    margin-right: 25px;
+}
+
+
+/*MAIN*/
+
+.main {
+    padding-top: 50px;
+    padding-left: 90px;
+    padding-right: 90px;
+    background: #fff;
+}
+
+/*crear usuario*/
+.contenedor h1 {
+    color: #f6821f;
+    font-size: 2.5rem;
+}
+
+.contenedor .element {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.contenedor .element .label {
+    margin-bottom: 0px;
+    text-align: left;
+    color: black;
+}
+
+.contenedor .element input {
+    width: 101%;
+    padding: 3px;
+    border-radius: 8px;
+    border: 1.5px #cdc solid;
+}
+.btn{
+    color: #cdc;
+    background: #4160af;
+    border-radius: 15px;
+}
+
+/*mediaquerys*/
+
+@media screen and (max-width:1300px) {
+    .barra-lateral {
+        min-width: auto;
+    }
+
+    .barra-lateral .menu a span {
+        display: none;
+    }
+
+    .barra-lateral .menu a i {
+        margin: 0;
+    }
+
+    .barra {
+        min-width: auto;
+    }
+
+    .dropdown-menu {
+        margin: 20px -79px 0px;
+    }
+}
+
+@media screen and (max-width:575px) {
+    .barra-lateral {
+        min-height: auto;
+    }
+
+    .barra-lateral .menu a {
+        display: inline-block;
+        border-bottom: none;
+    }
+
+    .dropdown-menu {
+        margin: 20px -78px 0px;
+    }
+
+    .logocppe {
+        width: 100%;
+    }
+
+    body {
+        background: #D3D3D3;
+        font-size: 16px;
+        overflow: visible;
+    }
+}
+
+
+@media screen and (max-width:575px) {
+    .barra-lateral {
+        height: auto;
+    }
+
+    .barra-lateral.menu a {
+        display: inline-block;
+        border-bottom: none;
+    }
+
+    .dropdown-menu {
+        margin: 20px -78 0px;
+    }
+
+    body {
+        font-size: 16px;
+        overflow: visible;
+    }
+}
