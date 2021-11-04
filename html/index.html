@@ -18,12 +18,11 @@
 </head>
 
 <body class="d-flex h-100 text-center text-white">
-    <div class="bg-black bg-opacity-50 bg-cover bg-filter"></div>   
-    <div class="bg-cover" style="background-image: url(/img/bg3.jpg);"></div> 
+
     <div class="d-flex w-100 h-100  mx-auto flex-column">
         <header class="mb-auto">
             <nav class="navbar navbar-expand-lg navbar-dark bg-black">
-                <div class="container">
+                <div class="container" style="margin-left: 50px;">
                     <a class="navbar-brand" href="/html/index.html">
                         <img src="/img/logo.png" alt="" width="141" height="40" class="d-inline-block align-text-top" />
                     </a>
@@ -60,30 +59,26 @@
             </nav>
         </header>
 
-        <main class="container">
-            <section class="row d-flex justify-content-evenly">
-                <div>
-                    <div class="bg-black bg-opacity-50 bg-cover bg-filter"></div>  
-                    <div class="bg-cover" v-bind:style="{ backgroundImage: 'url(' + require('../assets/bg3.jpg')+')' }"></div>
-                    <div class="container mx-auto">
-                              <section class="row d-flex justify-content-evenly ">
-                                  <div class="col-lg-4 my-auto">
-                                      <h1 class="color-marca">Carvajal Materiales</h1>
-                                      <p class="lead">
-                                          ¡Bienvenidos! Carvajal Materiales te provee 
-                                          materiales de construcción para que cumplas tus 
-                                          proyectos de remodelación para tu hogar y productos de 
-                                          ferretería en general.
-                                          ¡¡Ven a conocernos y contruyamos juntos!!
-                
-                                      </p>           
-                                      <a to="/productos" class="btn btn-primary">Ver productos</a>     
-                                  </div>
-                              </section>
-                    </div>
-                  </div>
-            </section>
-        </main>
+        <div>
+            <div class="bg-black bg-opacity-50 bg-cover bg-filter"></div>  
+            <div class="bg-cover" style="background-image: url(/img/bg3.jpg);"></div>
+            <div class="container mx-auto">
+                    <section class="row d-flex justify-content-evenly ">
+                        <div class="col-lg-4 my-auto">
+                            <h1 class="color-marca">Carvajal Materiales</h1>
+                            <p class="lead">
+                                ¡Bienvenidos! Carvajal Materiales te provee 
+                                materiales de construcción para que cumplas tus 
+                                proyectos de remodelación para tu hogar y productos de 
+                                ferretería en general.
+                                ¡¡Ven a conocernos y contruyamos juntos!!
+        
+                            </p>           
+                            <a to="/productos" class="btn btn-primary">Ver productos</a>     
+                        </div>
+                    </section>
+            </div>
+        </div>
 
         <footer class="footer mt-auto text-white bg-black p-3">
             <div class="container-fluid">
@@ -106,6 +101,7 @@
             </div>
         </footer>
     </div>
+
 </body>
 
 </html>
