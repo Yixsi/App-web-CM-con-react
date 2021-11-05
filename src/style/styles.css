@@ -422,3 +422,8 @@ h2{
   margin: 9% 40% 3% 38%;
   font-size: 1.5em;
 }
+
+.admin{
+  padding: 0px;
+  border-bottom: 3px #f6821f solid;
+}
