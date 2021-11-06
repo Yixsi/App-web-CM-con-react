@@ -1,4 +1,5 @@
 import Layout from "layouts/Layout"
+import NavTabs from "components/Tabs"
 import imgProducto from "media/producto.png"
 import "style/Productos.css"
 
@@ -6,6 +7,8 @@ function Productos(){
     return(
         <Layout>
             <div className="container mx-auto mt-5 mb-5">
+
+                
 
                 <div className="row">
 
