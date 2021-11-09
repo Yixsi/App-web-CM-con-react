@@ -1,4 +1,5 @@
 import { NavLink } from 'react-router-dom'
+import React from 'react'
 import logo from "media/logo.png"
 
 function Header(){
@@ -19,19 +20,19 @@ function Header(){
                             <div className="d-flex">
                                 <ul id="nav" className="navbar-nav nav-masthead me-auto mb-2 mb-lg-0">
                                     <li className="nav-item">
-                                        <NavLink to="/" exact activeStyle= {{ color: '#f6821f' }} className="nav-link" aria-current="page">Inicio</NavLink>
+                                        <NavLink to="/" className="nav-link" aria-current="page">Inicio</NavLink>
                                     </li>
                                     <li className="nav-item">
-                                        <NavLink to="/nosotros" className="nav-link" activeStyle= {{ color: '#f6821f' }}>Nosotros</NavLink>
+                                        <NavLink to="/nosotros" className="nav-link">Nosotros</NavLink>
                                     </li>
                                     <li className="nav-item">
-                                        <NavLink to="/productos" className="nav-link" activeStyle= {{ color: '#f6821f' }} >Productos</NavLink>
+                                        <NavLink to="/productos" className="nav-link">Productos</NavLink>
                                     </li>
                                     <li className="nav-item">
-                                        <NavLink to="/articulos" className="nav-link" activeStyle= {{ color: '#f6821f' }}>Artículos</NavLink>
+                                        <NavLink to="/articulos" className="nav-link">Artículos</NavLink>
                                     </li>
                                     <li className="nav-item">
-                                        <NavLink to="/contacto" className="nav-link" activeStyle= {{ color: '#f6821f' }}>Contacto</NavLink>
+                                        <NavLink to="/contacto" className="nav-link" activestyle= {{ color: '#f6821f' }}>Contacto</NavLink>
                                     </li>
                                 </ul>
                             </div>

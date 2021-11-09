@@ -2,11 +2,12 @@ import Index from 'pages/index';
 import Nosotros from "pages/Nosotros"
 import Articulos from 'pages/Articulos';
 import Contacto from 'pages/Contacto';
+import Login from 'pages/login';
 import "style/styles.css"
 
 import {
   BrowserRouter as Router,
-  Switch,
+  Routes,
   Route 
 } from "react-router-dom";
 
@@ -16,30 +17,23 @@ import Productos from 'pages/Productos';
 
 function App() {
   return (
+    
       <Router>
-        <Switch>
+        <Routes>
+
+          <Route exact path = "/login" element= {<Login/>} />
         
-          <Route path = "/contacto">
-            <Contacto/>
-          </Route>
+          <Route exact path = "/contacto" element={<Contacto/>} />
 
-          <Route path = "/articulos">
-            <Articulos/>
-          </Route>
-
-          <Route path = "/productos">
-            <Productos/>
-          </Route>
+          <Route exact path = "/articulos" element={<Articulos/>} />
           
-          <Route path = "/nosotros">
-            <Nosotros/>
-          </Route>
+          <Route exact path = "/productos" element = {<Productos/>} />
+          
+          <Route exact path = "/nosotros" element= {<Nosotros/>} />
+            
+          <Route exact path = "/" element= {<Index/>} />
 
-          <Route path = "/">
-            <Index/>
-          </Route>
-
-        </Switch>
+        </Routes>
       </Router>
   );
 }

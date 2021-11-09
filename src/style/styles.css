@@ -427,3 +427,7 @@ h2{
   padding: 0px;
   border-bottom: 3px #f6821f solid;
 }
+
+.navbar-dark .navbar-nav .show > .nav-link, .navbar-dark .navbar-nav .nav-link.active{
+  color: #f6821f;
+}

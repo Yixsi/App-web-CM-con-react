@@ -1,14 +1,14 @@
 import Layout from "layouts/Layout"
-import NavTabs from "components/Tabs"
+/* import NavTabs from "components/Tabs" */
 import imgProducto from "media/producto.png"
 import "style/Productos.css"
 
 function Productos(){
     return(
         <Layout>
-            <div className="container mx-auto mt-5 mb-5">
+            <div className="container mx-auto mt-5 mb-5">nav
 
-                
+                {/* <NavTabs></NavTabs> */}
 
                 <div className="row">
 
@@ -36,7 +36,7 @@ function Productos(){
                             </li>
                             <li className="nav-item">
                                 <a className="nav-link" id="otros-tab" data-bs-toggle="tab" data-bs-target="#otros"
-                                    type="button" href="/#" role="tab" aria-controls="otros" aria-selected="true">Otros</a>
+                                    type="button" href="todos" role="tab" aria-controls="otros" aria-selected="true">Otros</a>
                             </li>
                             <li className="nav-item fontsearch" style={{marginLeft: "4%"}}>
                                     {/* <i className="fas fa-search"></i> */}

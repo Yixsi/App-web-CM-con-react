@@ -1,0 +1,6 @@
+Si no funciona con el cmd "yarn start" instalar las siguientes dependencias
+
+- yarn add -D @testing-library/dom@latest
+- yarn add react-router-dom
+- yarn add typescript@lastest
+- npx browserslist@latest --update-db
