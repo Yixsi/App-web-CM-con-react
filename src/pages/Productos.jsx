@@ -978,45 +978,9 @@ const productosData = [
 
 function Productos(){
 
-  const [carritoCompras, setCarrito] = useState([
-    {
-      "_id": {
-        "$oid": "61672412aeab4ac259d6619b"
-      },
-      "codigo": "149",
-      "nombre": "Cinta Malla 20 Metros",
-      "precio": " $ 2,600 ",
-      "cantidad": "6",
-      "fecha": "2021-04-20",
-      "descripcion": "Cinta para uso en paredes de panel.",
-      "categoria": "Otros",
-      "url": "https://admintienda.coval.com.co/backend/admin/backend/web/archivosDelCliente/items/images/ACCESORIOS-CINTAS-CINTA-MALLA------------5-CM-X--20-M-DELT-170520210611060802.jpg"
-    },{
-      "_id": {
-        "$oid": "61672412aeab4ac259d661a0"
-      },
-      "codigo": "159",
-      "nombre": "Clavo  3/4  Caja",
-      "precio": " $ 3,500 ",
-      "cantidad": "2",
-      "fecha": "2021-04-20",
-      "descripcion": "Clavos de alta resitencia para uso en diferentes superficies",
-      "url": "https://indurruedas.co/wp-content/uploads/2017/12/DSC4803.jpg"
-    },{
-      "_id": {
-        "$oid": "61672412aeab4ac259d661af"
-      },
-      "codigo": "202",
-      "nombre": "Espátula Goya Inox",
-      "precio": " $ 5,000 ",
-      "cantidad": "2",
-      "fecha": "2021-04-20",
-      "descripcion": "Fabricada en acero inoxidable, con mango antideslizante de polipropileno",
-      "categoria": "Herramientas",
-      "url": "https://myacenter.com/wp-content/uploads/2020/09/12204-600x600.jpg"
-    }
-  ])
-  
+  const [carritoCompras, setCarrito] = useState([])
+  const [buscarProducto, setBuscar] = useState('')
+
   function agregarCotizacion(index){
     setCarrito([
       ...carritoCompras,
@@ -1029,103 +993,103 @@ function Productos(){
         <div className="container mx-auto mt-5 mb-5">
           <div className="row">
 
-              <section className="col-md-10 mx-auto">
-                  <ul className="nav nav-tabs nav-tabsp nav-fill" id="productos" role="tablist">
-                      <li className="nav-item">
-                          <a className="nav-link active" id="todos-tab" data-bs-toggle="tab" data-bs-target="#todos"
-                              type="button" href="/#" role="tab" aria-controls="todos" aria-selected="true">Todos</a>
-                      </li>
-                      <li className="nav-item">
-                          <a className="nav-link" id="materiales-tab" data-bs-toggle="tab" data-bs-target="#materiales"
-                              type="button" href="/#" role="tab" aria-controls="materiales" aria-selected="true">Hogar</a>
-                      </li>
-                      <li className="nav-item">
-                          <a className="nav-link" id="electricos-tab" data-bs-toggle="tab" data-bs-target="#electricos"
-                              type="button" href="/#"  role="tab" aria-controls="electricos" aria-selected="true">Eléctricos</a>
-                      </li>
-                      <li className="nav-item">
-                          <a className="nav-link" id="maderas-tab" data-bs-toggle="tab" data-bs-target="#maderas"
-                              type="button" href="/#" role="tab" aria-controls="maderas" aria-selected="true">Herramientas</a>
-                      </li>
-                      <li className="nav-item">
-                          <a className="nav-link" id="tuberias-tab" data-bs-toggle="tab" data-bs-target="#tuberias"
-                              type="button" href="/#" role="tab" aria-controls="tuberias" aria-selected="true">Tuberías</a>
-                      </li>
-                      <li className="nav-item">
-                          <a className="nav-link" id="otros-tab" data-bs-toggle="tab" data-bs-target="#otros"
-                              type="button" href="todos" role="tab" aria-controls="otros" aria-selected="true">Otros</a>
-                      </li>
-                      <li className="nav-item fontsearch" style={{marginLeft: "4%"}}>
-                              {/* <i className="fas fa-search"></i> */}
-                              <input className="form-control me-2" type="search" placeholder="Buscar" aria-label="Search" name="buscarProducto"/>
-                      </li>
-                      <li className="nav-item">
-                          <button type="button" data-bs-toggle="modal" data-bs-target="#cotizar" id="cart-btn">
-                              <i className="material-icons" id="cart">shopping_cart</i></button>
-                      </li>
-                  </ul>
+            <section className="col-md-10 mx-auto">
+                <ul className="nav nav-tabs nav-tabsp nav-fill" id="productos" role="tablist">
+                    <li className="nav-item">
+                        <a className="nav-link active" id="todos-tab" data-bs-toggle="tab" data-bs-target="#todos"
+                            type="button" href="/#" role="tab" aria-controls="todos" aria-selected="true">Todos</a>
+                    </li>
+                    <li className="nav-item">
+                        <a className="nav-link" id="hogar-tab" data-bs-toggle="tab" data-bs-target="#hogar"
+                            type="button" href="/#" role="tab" aria-controls="hogar" aria-selected="true">Hogar</a>
+                    </li>
+                    <li className="nav-item">
+                        <a className="nav-link" id="electricos-tab" data-bs-toggle="tab" data-bs-target="#electricos"
+                            type="button" href="/#"  role="tab" aria-controls="electricos" aria-selected="true">Eléctricos</a>
+                    </li>
+                    <li className="nav-item">
+                        <a className="nav-link" id="herramientas-tab" data-bs-toggle="tab" data-bs-target="#herramientas"
+                            type="button" href="/#" role="tab" aria-controls="herramientas" aria-selected="true">Herramientas</a>
+                    </li>
+                    <li className="nav-item">
+                      <a className="nav-link" id="tuberias-tab" data-bs-toggle="tab" data-bs-target="#tuberias"
+                        ype="button" href="/#" role="tab" aria-controls="tuberias" aria-selected="true">Tuberías</a>
+                    </li>
+                    <li className="nav-item">
+                      <a className="nav-link" id="otros-tab" data-bs-toggle="tab" data-bs-target="#otros"
+                      type="button" href="todos" role="tab" aria-controls="otros" aria-selected="true">Otros</a>
+                    </li>
+                    <li className="nav-item fontsearch" style= {{marginLeft: "4%"}}>
+                      {/* <i className="fas fa-search"></i> */}
+                      <input className="form-control me-2" type="search" placeholder="Buscar" aria-label="Search" value = {buscarProducto} name = "buscarProducto"  onChange={event => setBuscar(event.target.value)}/>
+                    </li>
+                    <li className="nav-item">
+                      <button type="button" data-bs-toggle="modal" data-bs-target="#cotizar" id="cart-btn">
+                      <i className="material-icons" id="cart">shopping_cart</i></button>
+                    </li>
+                </ul>
 
-                  <div className="modal fade" tabIndex="-1" id="cotizar" aria-hidden="true" aria-labelledby="cotizacion">
-                      <div className="modal-dialog modal-dialog-centered">
-                          <div className="modal-content text-dark">
+                <div className="modal fade" tabIndex="-1" id="cotizar" aria-hidden="true" aria-labelledby="cotizacion">
+                  <div className="modal-dialog modal-dialog-centered">
+                    <div className="modal-content text-dark">
 
-                              <div className="modal-header">
-                                  <h5 className="modal-title" id="cotizacion">Cotización</h5>
-                                  <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close" style= {{backgroundColor: "white"}}>
-                                  </button>
-                              </div>
-
-                              <div className="modal-body">
-                                  <table className="table table-hover">
-                                      <thead className="table-light" id="thead">
-                                          <tr>
-                                              <th>Producto</th>
-                                              <th className="cantidad">Cantidad</th>
-                                              <th>Costo</th>
-                                              <th></th>
-                                          </tr>  
-                                      </thead>
-
-                                      <tbody>
-                                        {carritoCompras.map((i,index)=>(
-                                          <tr key={index}>
-                                              <td>{i.nombre}</td>
-                                              <td>
-                                                  <button ><i className="fas fa-minus hvr-push" style= {{paddingRight: "12px"}}></i></button>1 <button ><i className="fas fa-plus hvr-push" style={{paddingLeft: "12px"}}></i></button>
-                                              </td>
-                                              <td>{i.precio}</td>
-                                              <td>
-                                                  <button><i className="fas fa-trash-alt hvr-push"></i></button>
-                                              </td>
-                                          </tr>
-                                        ))}
-                                      </tbody>
-
-                                      <tfoot style= {{borderBottom: "hidden"}}>
-                  
-                                          {/* <tr>
-                                              <td></td>
-                                              <td style= {{fontWeight: "bolder"}}>Total</td>
-                                              <td></td>
-                                          </tr>
-                                          
-                                          <tr>
-                                              <td></td>
-                                              <td>No tienes productos en el carrito</td>
-                                          </tr> */}
-                                        
-                                      </tfoot>
-                                  </table>
-                              </div>
-
-                              <div className="modal-footer">
-                                  <button type="button" className="btn2">Guardar</button>
-                                  <button type="button" className="btn btn-secondary ">Cancelar</button>
-                              </div>
-                          </div>
+                      <div className="modal-header">
+                        <h5 className="modal-title" id="cotizacion">Cotización</h5>
+                        <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close" style= {{backgroundColor: "white"}}>
+                        </button>
                       </div>
-                  </div>
 
+                      <div className="modal-body">
+                        <table className="table table-hover">
+                            <thead className="table-light" id="thead">
+                                <tr>
+                                    <th>Producto</th>
+                                    <th className="cantidad">Cantidad</th>
+                                    <th>Costo</th>
+                                    <th></th>
+                                </tr>  
+                            </thead>
+
+                            <tbody>
+                              {carritoCompras.map((i,index)=>(
+                                <tr key={index}>
+                                    <td>{i.nombre}</td>
+                                    <td>
+                                        <button ><i className="fas fa-minus hvr-push" style= {{paddingRight: "12px"}}></i></button>1 <button ><i className="fas fa-plus hvr-push" style={{paddingLeft: "12px"}}></i></button>
+                                    </td>
+                                    <td>{i.precio}</td>
+                                    <td>
+                                        <button><i className="fas fa-trash-alt hvr-push"></i></button>
+                                    </td>
+                                </tr>
+                              ))}
+                            </tbody>
+
+                            <tfoot style= {{borderBottom: "hidden"}}>
+        
+                                {/* <tr>
+                                    <td></td>
+                                    <td style= {{fontWeight: "bolder"}}>Total</td>
+                                    <td></td>
+                                </tr>
+                                
+                                <tr>
+                                    <td></td>
+                                    <td>No tienes productos en el carrito</td>
+                                </tr> */}
+                              
+                            </tfoot>
+                        </table>
+                      </div>
+
+                      <div className="modal-footer">
+                        <button type="button" className="btn2">Guardar</button>
+                        <button type="button" className="btn btn-secondary ">Cancelar</button>
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
               </section>
 
           </div>
@@ -1134,7 +1098,7 @@ function Productos(){
 
             <div className="tab-pane fade show active" id="todos" role="tabpanel" aria-labelledby="todos-tab">
               <section className="row">
-                {productosData.map((i,index)=>(
+                {productosData.filter(i => i.nombre.toLowerCase().match(buscarProducto.toLowerCase())).map((i,index)=>(
                   <div key={index} className="col-12 col-sm-6 col-md-4 col-lg-3 mt-5">
                     <div className="card m-auto shadow" style= {{width: "200px"}}>
                       <button type="button" className="tags" gloss="Añadir a cotización" onClick = {()=> agregarCotizacion(index)}><i className="fas fa-plus-square hvr-bounce-in" id="plus"></i></button>
@@ -1152,9 +1116,9 @@ function Productos(){
               </section>
             </div>
 
-            <div className="tab-pane fade" id="materiales" role="tabpanel" aria-labelledby="materiales-tab">
+            <div className="tab-pane fade" id="hogar" role="tabpanel" aria-labelledby="hogar-tab">
                 <section className="row">
-                  {productosData.filter(i=> i.categoria === "Hogar").map((i,index)=>(
+                  {productosData.filter(i => i.nombre.toLowerCase().match(buscarProducto.toLowerCase()) && i.categoria === "Hogar").map((i,index)=>(
                     <div key={index} className="col-12 col-sm-6 col-md-4 col-lg-3 mt-5">
                       <div className="card m-auto shadow" style= {{width: "200px"}}>
                         <button type="button" className="tags" gloss="Añadir a cotización"><i className="fas fa-plus-square hvr-bounce-in" id="plus"></i></button>
@@ -1174,7 +1138,7 @@ function Productos(){
 
             <div className="tab-pane fade" id="electricos" role="tabpanel" aria-labelledby="electricos-tab">
                 <section className="row">
-                  {productosData.filter(i=> i.categoria === "Eléctricos").map((i,index)=>(
+                  {productosData.filter(i => i.nombre.toLowerCase().match(buscarProducto.toLowerCase()) && i.categoria === "Eléctricos").map((i,index)=>(
                     <div key={index} className="col-12 col-sm-6 col-md-4 col-lg-3 mt-5">
                       <div className="card m-auto shadow" style= {{width: "200px"}}>
                         <button type="button" className="tags" gloss="Añadir a cotización"><i className="fas fa-plus-square hvr-bounce-in" id="plus"></i></button>
@@ -1192,9 +1156,9 @@ function Productos(){
                 </section>
             </div>
 
-            <div className="tab-pane fade" id="maderas" role="tabpanel" aria-labelledby="maderas-tab">
+            <div className="tab-pane fade" id="herramientas" role="tabpanel" aria-labelledby="herramientas-tab">
                 <section className="row">
-                  {productosData.filter(i=> i.categoria === "Herramientas").map((i,index)=>(
+                  {productosData.filter(i => i.nombre.toLowerCase().match(buscarProducto.toLowerCase()) &&  i.categoria === "Herramientas").map((i,index)=>(
                     <div key={index} className="col-12 col-sm-6 col-md-4 col-lg-3 mt-5">
                       <div className="card m-auto shadow" style= {{width: "200px"}}>
                         <button type="button" className="tags" gloss="Añadir a cotización"><i className="fas fa-plus-square hvr-bounce-in" id="plus"></i></button>
@@ -1214,7 +1178,7 @@ function Productos(){
 
             <div className="tab-pane fade" id="tuberias" role="tabpanel" aria-labelledby="tuberias-tab">
                 <section className="row">
-                  {productosData.filter(i=> i.categoria === "Tuberia").map((i,index)=>(
+                  {productosData.filter(i => i.nombre.toLowerCase().match(buscarProducto.toLowerCase()) && i.categoria === "Tuberia").map((i,index)=>(
                     <div key={index} className="col-12 col-sm-6 col-md-4 col-lg-3 mt-5">
                       <div className="card m-auto shadow" style= {{width: "200px"}}>
                         <button type="button" className="tags" gloss="Añadir a cotización"><i className="fas fa-plus-square hvr-bounce-in" id="plus"></i></button>
@@ -1234,7 +1198,7 @@ function Productos(){
 
             <div className="tab-pane fade" id="otros" role="tabpanel" aria-labelledby="otros-tab">
                 <section className="row">
-                  {productosData.filter(i=> i.categoria === "Otros").map((i,index)=>(
+                  {productosData.filter(i => i.nombre.toLowerCase().match(buscarProducto.toLowerCase()) && i.categoria === "Otros").map((i,index)=>(
                     <div key={index} className="col-12 col-sm-6 col-md-4 col-lg-3 mt-5">
                       <div className="card m-auto shadow" style= {{width: "200px"}}>
                         <button type="button" className="tags" gloss="Añadir a cotización"><i className="fas fa-plus-square hvr-bounce-in" id="plus"></i></button>
