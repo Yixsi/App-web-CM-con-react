@@ -150,7 +150,7 @@ function Productos(){
                                     <button type="button" className="tags" gloss="Añadir a cotización"><i className="fas fa-plus-square hvr-bounce-in" id="plus"></i></button>
                                     <img src= "item.url" className="card-img-top" alt="Imagen producto" id="imagenes-producto"/> 
                                     <div className="card-body border-top text-start">
-                                        <h5 className="card-title color-marca">Hola</h5>
+                                        <h5 className="card-title color-marca">Increible</h5>
                                         <p className="card-text text-black review__item__text">
                                             
                                         </p>
