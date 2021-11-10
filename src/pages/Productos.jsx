@@ -39,8 +39,8 @@ function Productos(){
                                     type="button" href="todos" role="tab" aria-controls="otros" aria-selected="true">Otros</a>
                             </li>
                             <li className="nav-item fontsearch" style={{marginLeft: "4%"}}>
-                                    {/* <i className="fas fa-search"></i> */}
-                                    <input className="form-control me-2" type="search" placeholder="Buscar" aria-label="Search" v-model= "buscarProducto"/>
+                                    <i className="fas fa-search"></i>
+                                    <input className="find form-control me-2" type="search" placeholder="Buscar" aria-label="Search" v-model= "buscarProducto"/>
                             </li>
                             <li className="nav-item">
                                 <button type="button" data-bs-toggle="modal" data-bs-target="#cotizar" id="cart-btn">

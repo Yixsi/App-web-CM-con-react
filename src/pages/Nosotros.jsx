@@ -1,6 +1,6 @@
 import Layout from "layouts/Layout"
 import "style/bootstrap.css"
-import video from "media/video.mp4"
+import carvajal from "media/Carvajal.jpeg"
 
 function Nosotros(params) {
     return(
@@ -8,20 +8,32 @@ function Nosotros(params) {
             <div className="container mx-auto mt-5 mb-5">
 
                 <section className="row mb-5 .bg-dark">
-                    <div id="carouselExampleSlidesOnly" className="carousel slide" data-bs-ride="carousel">
-                        <div className="carousel-inner">
-                            <div className="carousel-item active">
-
-                                <video autoPlay muted width="1000" height="250" style = {{backgroundColor: "black"}} loop id="myVideo">
-                                    <source src= {video} type="video/mp4"></source>
-                                    <p>Su navegador no soporta video HTML5. Aquí hay un <a href="rabbit320.mp4">enlace al video</a>.</p>
-                                </video>
-                            </div>
+                <div className="wrapper mx-auto">
+                    <div className="card col-lg-4 col-md-6 col-sm-12"><img src="https://images.squarespace-cdn.com/content/v1/53c4566ae4b047b01385cdb6/1542663621032-QSYRS85LCRJXVIGWYBVY/julio_ferreterias_mar23.jpg?format=1000w"/>
+                        <div className="info">
+                        <h1>¿Quiénes somos?</h1>
+                        <p>Lorem Ipsum is simply dummy text from the printing and typeseting industry</p>
+                        <button>Read More</button>
                         </div>
+                    </div>
+                    <div className="card col-lg-4 col-md-6 col-sm-12"><img src="https://img.freepik.com/foto-gratis/pareja-joven-haciendo-reparacion-apartamentos-juntos-ellos-mismos-hombre-mujer-casados-haciendo-remodelacion-o-renovacion-casa-concepto-relaciones-familia-amor-midiendo-pared-preparandose-diseno_155003-19797.jpg?size=626&ext=jpg"/>
+                        <div className="info">
+                        <h1>Misión</h1>
+                        <p>Lorem Ipsum is simply dummy text from the printing and typeseting industry</p>
+                        <button>Read More</button>
+                        </div>
+                    </div>
+                    <div className="card col-lg-4 col-md-6 col-sm-12"><img src="https://img.freepik.com/foto-gratis/constructor-masculino-probandose-casco-estante-ferreteria-constructor-uniforme-mirar-productos-tienda-bricolaje_266732-20737.jpg?size=626&ext=jpg"/>
+                        <div className="info">
+                        <h1>Visión</h1>
+                        <p>Lorem Ipsum is simply dummy text from the printing and typeseting industry</p>
+                        <button>Read More</button>
+                        </div>
+                    </div>
                     </div>
                 </section>
 
-                <section className="row d-flex justify-content-evenly text-black ">   
+                {/* <section className="row d-flex justify-content-evenly text-black ">   
                         <div className="col-10 col-md-5 my-auto card text-start" >
                             <div className="card-body">
                                 <h1 className="color-marca card-title">¿Quiénes somos?</h1>
@@ -54,7 +66,7 @@ function Nosotros(params) {
                                 </p>
                             </div>
                         </div>
-                </section>
+                </section> */}
 
             </div>
         </Layout>
