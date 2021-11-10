@@ -10,19 +10,19 @@ function Articulos(){
                         <ul className="nav nav-tabs nav-tabsp nav-fill" id="productos" role="tablist">
                             <li className="nav-item">
                                 <a className="nav-link active" id="todos-tab" data-bs-toggle="tab" data-bs-target="#todos"
-                                    type="button" href="/#" role="tab" aria-controls="todos" aria-selected="true">Todos</a>
+                                    type="button" role="tab" aria-controls="todos" aria-selected="true">Todos</a>
                             </li>
                             <li className="nav-item">
                                 <a className="nav-link" id="tutoriales-tab" data-bs-toggle="tab" data-bs-target="#tutoriales"
-                                    type="button" href="/#" role="tab" aria-controls="tutoriales" aria-selected="true">Tutoriales</a>
+                                    type="button" role="tab" aria-controls="tutoriales" aria-selected="true">Tutoriales</a>
                             </li>
                             <li className="nav-item">
                                 <a className="nav-link" id="noticias-tab" data-bs-toggle="tab" data-bs-target="#noticias"
-                                    type="button" href="/#" role="tab" aria-controls="noticias" aria-selected="true">Noticias</a>
+                                    type="button" role="tab" aria-controls="noticias" aria-selected="true">Noticias</a>
                             </li>
                             <li className="nav-item">
                                     <a className="nav-link" id="consejos-tab" data-bs-toggle="tab" data-bs-target="#consejos"
-                                        type="button" href="/#" role="tab" aria-controls="consejos" aria-selected="true">Consejos</a>
+                                        type="button" role="tab" aria-controls="consejos" aria-selected="true">Consejos</a>
                                 </li>
                         </ul>
                     </section>
