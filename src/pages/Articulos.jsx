@@ -89,7 +89,9 @@ function Articulos(){
                                             <h6 className="card-title color-marca">{i.clase}</h6>                                    
                                             <h5 className="card-title text-black">{i.titulo}</h5>
                                             <p className="card-text text-black">
-                                                {i.descripcion}
+                                                <section className="review__articulo__text">
+                                                    {i.descripcion}
+                                                </section>
                                                 <a  href = "item.url" className="text-danger">  Leer más...</a>
                                             </p>
                                         </div>
@@ -109,7 +111,9 @@ function Articulos(){
                                             <h6 className="card-title color-marca">{i.clase}</h6>                                    
                                             <h5 className="card-title text-black">{i.titulo}</h5>
                                             <p className="card-text text-black">
-                                                {i.descripcion}
+                                                <section className="review__articulo__text">
+                                                    {i.descripcion}
+                                                </section>
                                                 <a  href = "item.url" className="text-danger">  Leer más...</a>
                                             </p>
                                         </div>
@@ -129,7 +133,9 @@ function Articulos(){
                                             <h6 className="card-title color-marca">{i.clase}</h6>                                    
                                             <h5 className="card-title text-black">{i.titulo}</h5>
                                             <p className="card-text text-black">
-                                                {i.descripcion}
+                                                <section className="review__articulo__text">
+                                                    {i.descripcion}
+                                                </section>
                                                 <a  href = "item.url" className="text-danger">  Leer más...</a>
                                             </p>
                                         </div>
@@ -149,7 +155,9 @@ function Articulos(){
                                             <h6 className="card-title color-marca">{i.clase}</h6>                                    
                                             <h5 className="card-title text-black">{i.titulo}</h5>
                                             <p className="card-text text-black">
-                                                {i.descripcion}
+                                                <section className="review__articulo__text">
+                                                    {i.descripcion}
+                                                </section>
                                                 <a  href = "item.url" className="text-danger">  Leer más...</a>
                                             </p>
                                         </div>
