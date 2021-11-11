@@ -35,11 +35,11 @@ function Header(){
                                         <NavLink to="/contacto" className="nav-link">Contacto</NavLink>
                                     </li>
                                     <li>
-                                        <a href="/#" class="px-3 text-light perfil dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="far fa-user-circle"></i></a>
+                                        <a href="/#" className="px-3 text-light perfil dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i className="far fa-user-circle"></i></a>
 
-                                        <div class="dropdown-menu" aria-labelledby="navbar-dropdown">
-                                            <a class="dropdown-item menuperfil cerrar" href="/#"><i class="fas fa-exchange-alt"></i> Cambiar Contraseña</a>
-                                            <a class="dropdown-item menuperfil cerrar" href="/#"><i class="fas fa-sign-out-alt m-1"></i>cerrar sesion</a>
+                                        <div className="dropdown-menu" aria-labelledby="navbar-dropdown">
+                                            <a className="dropdown-item menuperfil cerrar" href="/#"><i className="fas fa-exchange-alt"></i> Cambiar Contraseña</a>
+                                            <a className="dropdown-item menuperfil cerrar" href="/#"><i className="fas fa-sign-out-alt m-1"></i>cerrar sesion</a>
                                         </div>
                                     </li>
                                 </ul>

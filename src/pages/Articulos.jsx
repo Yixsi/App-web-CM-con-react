@@ -1,5 +1,4 @@
 import Layout from "layouts/Layout"
-import img from "media/termovalle.jpg"
 import "style/Articulos.css"
 
 function Articulos(){
