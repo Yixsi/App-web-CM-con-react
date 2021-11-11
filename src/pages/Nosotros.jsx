@@ -40,7 +40,7 @@ function Nosotros(params) {
                 </section>
                 <section className="tarjeta row mb-5 .bg-dark col-lg-4 col-md-6 col-sm-12">
                     <div className="wrapper mx-auto">
-                        <div className="card front"><img src="https://img.freepik.com/foto-gratis/pareja-joven-haciendo-reparacion-apartamentos-juntos-ellos-mismos-hombre-mujer-casados-haciendo-remodelacion-o-renovacion-casa-concepto-relaciones-familia-amor-midiendo-pared-preparandose-diseno_155003-19797.jpg?size=626&ext=jpg"/>
+                        <div className="card"><img src="https://img.freepik.com/foto-gratis/pareja-joven-haciendo-reparacion-apartamentos-juntos-ellos-mismos-hombre-mujer-casados-haciendo-remodelacion-o-renovacion-casa-concepto-relaciones-familia-amor-midiendo-pared-preparandose-diseno_155003-19797.jpg?size=626&ext=jpg"/>
                             <div className="info">
                             <h1>Misión</h1>
                             <p>Ofrecer productos de calidad a nuestros clientes, contribuyendo a la mejora de sus viviendas y cumpliendo sus sueños de remodelar su hogar.</p>
@@ -50,7 +50,7 @@ function Nosotros(params) {
                 </section>
                 <section className="tarjeta row mb-5 .bg-dark col-lg-4 col-md-6 col-sm-12">
                     <div className="wrapper mx-auto">
-                        <div className="card front"><img src="https://img.freepik.com/foto-gratis/constructor-masculino-probandose-casco-estante-ferreteria-constructor-uniforme-mirar-productos-tienda-bricolaje_266732-20737.jpg?size=626&ext=jpg"/>
+                        <div className="card"><img src="https://img.freepik.com/foto-gratis/constructor-masculino-probandose-casco-estante-ferreteria-constructor-uniforme-mirar-productos-tienda-bricolaje_266732-20737.jpg?size=626&ext=jpg"/>
                             <div className="info">
                             <h1>Visión</h1>
                             <p>Ser reconocidos como una empresa responsable con sus clientes, que brinda buen servicio y ofrece productos de calidad a nuestros clientes. Ser el mejor aliado del ferretero al proveer materiales de construcción y productos de ferretería.</p>
