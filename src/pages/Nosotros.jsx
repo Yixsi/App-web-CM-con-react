@@ -1,61 +1,63 @@
 import Layout from "layouts/Layout"
 import "style/bootstrap.css"
-import video from "media/video.mp4"
+import "style/nosotros.css"
+import modalbg from "media/6882.jpg"
 
 function Nosotros(params) {
     return(
         <Layout>
             <div className="container mx-auto mt-5 mb-5">
 
-                <section className="row mb-5 .bg-dark">
-                    <div id="carouselExampleSlidesOnly" className="carousel slide" data-bs-ride="carousel">
-                        <div className="carousel-inner">
-                            <div className="carousel-item active">
-
-                                <video autoPlay muted width="1000" height="250" style = {{backgroundColor: "black"}} loop id="myVideo">
-                                    <source src= {video} type="video/mp4"></source>
-                                    <p>Su navegador no soporta video HTML5. Aquí hay un <a href="rabbit320.mp4">enlace al video</a>.</p>
-                                </video>
+                <section className="tarjeta row mb-5 .bg-dark col-lg-4 col-md-6 col-sm-12">
+                    <div className="wrapper mx-auto">
+                        <div className="card front"><img src="https://images.squarespace-cdn.com/content/v1/53c4566ae4b047b01385cdb6/1542663621032-QSYRS85LCRJXVIGWYBVY/julio_ferreterias_mar23.jpg?format=1000w"/>
+                            <div className="info">
+                            <h1>¿Quiénes somos?</h1>
+                            <p>Somos una empresa dedicada a la distribución de productos eléctricos y de ferretería a los diferentes municipios del Valle del Cauca</p>
+                            <button className="btn-card"data-bs-toggle="modal" data-bs-target="#about">Leer más</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="modal fade" tabIndex="-1" id="about" aria-hidden="true" aria-labelledby="about">
+                            <div className="modal-dialog modal-dialog-centered">
+                                <div className="modal-content text-white" style={{ backgroundImage: `url(${modalbg})`}}>
+                                    <div className="modal-body">
+                                        <button type="button" className="close btn-close" data-bs-dismiss="modal" aria-label="Close" style= {{backgroundColor: "white"}}>
+                                        </button>
+                                        <p className="lead-about">
+                                        Somos una empresa dedicada a la distribución de productos eléctricos y de ferretería a diferentes municipios 
+                                        del Valle del Cauca, brindando un servicio innovador y eficiente. 
+                                        <br/>Generamos progreso y estabilidad en nuestros 
+                                        colaboradores, ya que ellos hacen posible la existencia de nuestra empresa.
+                                        </p>
+                                        <p className="lead-about">
+                                        Nuestra compañía inicia un proceso comercial en la ciudad de Candelaria, donde se vio un gran potencial de expansión gracias los nuevos proyectos de vivienda; por consiguiente, buscamos ser los mejores aliados de los residentes y ser partícipes en hacer cumplir sus sueños, ofreciendo una gran variedad de productos para la remodelación de sus hogares.
+                                        </p> 
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                </section>
+                <section className="tarjeta row mb-5 .bg-dark col-lg-4 col-md-6 col-sm-12">
+                    <div className="wrapper mx-auto">
+                        <div className="card"><img src="https://img.freepik.com/foto-gratis/pareja-joven-haciendo-reparacion-apartamentos-juntos-ellos-mismos-hombre-mujer-casados-haciendo-remodelacion-o-renovacion-casa-concepto-relaciones-familia-amor-midiendo-pared-preparandose-diseno_155003-19797.jpg?size=626&ext=jpg"/>
+                            <div className="info">
+                            <h1>Misión</h1>
+                            <p>Ofrecer productos de calidad a nuestros clientes, contribuyendo a la mejora de sus viviendas y cumpliendo sus sueños de remodelar su hogar.</p>
                             </div>
                         </div>
                     </div>
                 </section>
-
-                <section className="row d-flex justify-content-evenly text-black ">   
-                        <div className="col-10 col-md-5 my-auto card text-start" >
-                            <div className="card-body">
-                                <h1 className="color-marca card-title">¿Quiénes somos?</h1>
-                                <p className="lead card-text">
-                                    Somos una empresa dedicada a la distribución de productos eléctricos y de ferretería a los diferentes municipios 
-                                    del Valle del Cauca, mediante el innovador y eficiente servicio; generando progreso y estabilidad a nuestros 
-                                    colaboradores, ya que ellos hacen posible la existencia de nuestra empresa y  siendo así un aliado estratégico de 
-                                    nuestros clientes a la hora de remodelar sus hogares.
-                                </p>
-                                <p className="lead ">
-                                    Nuestra compañía inicia un proceso comercial en la ciudad de candelaria, donde se vio  un gran potencial  por su 
-                                    expansión gracias los nuevos proyectos de vivienda, actualmente buscamos  ser los mejores aliados de los propietarios 
-                                    de las viviendas y ser partícipes en hacer cumplir los sueños de los clientes ofreciendo una gran variedad de productos 
-                                    para la remodelación de sus hogares.
-                                </p>
+                <section className="tarjeta row mb-5 .bg-dark col-lg-4 col-md-6 col-sm-12">
+                    <div className="wrapper mx-auto">
+                        <div className="card"><img src="https://img.freepik.com/foto-gratis/constructor-masculino-probandose-casco-estante-ferreteria-constructor-uniforme-mirar-productos-tienda-bricolaje_266732-20737.jpg?size=626&ext=jpg"/>
+                            <div className="info">
+                            <h1>Visión</h1>
+                            <p>Ser reconocidos como una empresa responsable con sus clientes, que brinda buen servicio y ofrece productos de calidad a nuestros clientes. Ser el mejor aliado del ferretero al proveer materiales de construcción y productos de ferretería.</p>
                             </div>
                         </div>
-                        <div className="col-10 col-md-5 my-auto text-start card">
-                            <div className="card-body">
-                                <h2 className="color-marca card-title">Misión</h2>
-                                <p className="lead">
-                                    Ofrecer productos de calidad a nuestros clientes, contribuyendo a la mejora de sus viviendas y cumpliendo sus 
-                                    sueños de remodelar su hogar.
-                                </p>
-                                <h2 className="color-marca card-title">Visión</h2>
-                                <p className="lead">
-                                    Ser reconocidos como una empresa responsable con sus clientes, que brinda buen servicio y ofrece productos de 
-                                    calidad a nuestros clientes. Ser el mejor aliado del ferretero al proveer materiales de construcción y 
-                                    productos de ferretería.
-                                </p>
-                            </div>
-                        </div>
+                    </div>
                 </section>
-
             </div>
         </Layout>
     )
