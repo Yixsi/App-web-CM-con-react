@@ -393,7 +393,7 @@ function Productos() {
                   <div className="card m-auto shadow" style={{ width: "200px" }}>
 
                     {i[index] !== carritoCompras.find(e => e.nombre === i.nombre)
-                      ? <button type="button" disabled><i className="fas fa-plus-square hvr-bounce-in" style={{ color: "green" }} id="plus"></i></button>
+                      ? <button type="button" ><i className="fas fa-plus-square hvr-bounce-in" style={{ color: "green" }} id="plus"></i></button> 
                       : <button type="button" className="tags" gloss="Añadir a cotización" onClick={() => agregarCotizacion(i.codigo)}><i className="fas fa-plus-square hvr-bounce-in" id="plus"></i></button>
                     }
 
