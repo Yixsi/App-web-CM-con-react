@@ -76,10 +76,7 @@ function Login(){
                                     <div className="label"><label for="password">Contraseña</label></div>
                                     <input id="password" type="password" name="password" placeholder="Escriba su contraseña" v-model= "contraseña"/>
                                 </div><br />
-                                {/* <div className="element mb-3">        
-                                    <div className="label"><label>Mensaje</label></div>
-                                    <textarea id="comment" name="comment" rows="2" placeholder="Escribe tu mensaje aquí..." required></textarea>
-                                </div> */}
+                                
 
                                 <input id="boton" className="btn btn-primary" type="submit" value="Iniciar sesión"/>
                             </div>
@@ -93,61 +90,7 @@ function Login(){
 
 
 
-            {/* <div className="container mx-auto">
-
-                <div className= "container mx-auto">
-                    <section className="col-9 col-lg-4 mx-auto">
-                        <form  method="POST">
-                            <div className="contenedor">
-                                <h2>Login</h2>
-                                <div className=" fontuser element">
-                                    <i className="fas fa-user"></i>
-                                    <div className="label"><label for="email">Usuario</label></div>
-                                    <input id="usuario" type="text" name="usuario" placeholder="Escriba su usuario" v-model= "usuario"/><br/>
-                                </div>
-                                <div className="element fontpass">
-                                    <i className="fas fa-key"></i>
-                                    <div className="label"><label for="password">Contraseña</label></div>
-                                    <input id="password" type="password" name="password" placeholder="Escriba su contraseña" v-model= "contraseña"/><br/>
-                                </div>
-                                <div className="element">
-                                    <p className="text-dark"></p>
-                                </div>
-                                <input id="boton" className="btn btn-primary" type="submit" value="Iniciar sesión"/>
-                            </div>
-                        </form>
-                    </section>
-        
-                </div>
-                
-                
-                    
-                <div className="col-10 col-lg-5 mx-auto">
-
-                            <form action="server" method="POST">
-                                <div className="registro">
-                                    <h2 className="mt-3">Registro</h2>
-                                    <div className="element mb-3">
-                                        <div className="label"><label>Nombre</label></div>
-                                        <input type="text" id="nombre" name="nombre" placeholder="Escribe tu nombre" required/>
-                                    </div>
-                                    <div className="element mb-3">
-                                        <div className="label" ><label>Correo</label></div>
-                                        <input type="email" id="email" name="email" placeholder="Escribe tu correo..." required/>
-                                    </div>
-                                    <div className="element mb-3">        
-                                        <div className="label"><label>Usuario</label></div>
-                                        <input type="text" id="usuario" name="usuario"  placeholder="Escribe Un Nombre De Usuario ..." required></input>
-                                    </div>
-
-                                    <input className="btn btn-primary" type="submit" value="Registrarse"/>
-                                </div>
-                            </form>
-
-                </div>
-
-            </div> */}
-
+            
         </Layout>
     )
 
