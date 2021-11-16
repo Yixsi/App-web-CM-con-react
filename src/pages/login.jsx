@@ -20,10 +20,7 @@ function Login(){
                                     <div className="label"><label for="password">Contraseña</label></div>
                                     <input id="password" type="password" name="password" placeholder="Escriba su contraseña" v-model= "contraseña"/>
                                 </div><br />
-                                {/* <div className="element mb-3">        
-                                    <div className="label"><label>Mensaje</label></div>
-                                    <textarea id="comment" name="comment" rows="2" placeholder="Escribe tu mensaje aquí..." required></textarea>
-                                </div> */}
+                               
                     
                                 <input id="boton" className="btn btn-primary" type="submit" value="Iniciar sesión"/>
                             </div>
@@ -31,23 +28,6 @@ function Login(){
 
                     </div>
 
-                    {/* <div className="col-12 col-lg-6 mx-auto">
-                        <aside id="info">
-                            <article className="mt-3">
-                                <h2>Visítanos</h2>
-                                <p>CL 14D #43A-34 Manzanares I<br/>Poblado campestre, Candelaria<br/>Cali, Colombia</p>
-                            </article>
-                            <br/>
-                            <article className="mb-2">
-                                <h2>Síguenos</h2>
-                                <div className="mx-auto">
-                                    <a href="https://www.facebook.com/Carvajalmateriales"><i className="fab fa-facebook" style= {{color: "blue"}}></i></a><p className="d-inline" style= {{color: "black"}}> Facebook</p><br/>
-                                    <a href="https://www.instagram.com/carvajalmateriales/"><i className="fab fa-instagram" style={{color: "red"}}></i></a><p className="d-inline" style= {{color: "black"}}> Instagram</p><br/>
-                                    <a href="https://api.whatsapp.com/send?phone=%2B573003659340&fbclid=IwAR1Fs2TmR-vYJG0c8c1zhm4XzCFEJjWr2zbsaMjivUyG2SCrSoFVYx49qwA"><i className="fab fa-whatsapp" style= {{color: "rgb(102, 233, 102)"}}></i></a><p className="d-inline" style= {{color: "black"}}> Whatsapp</p><br/>
-                                </div>
-                            </article>
-                        </aside>
-                    </div> */}
                     
 
                     <div className="col-10 col-lg-5 mx-auto">
