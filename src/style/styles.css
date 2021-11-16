@@ -81,6 +81,19 @@ h2{
 }
 /*Formularios*/
 
+.registro{
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.registro .element textarea{
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 0.5px #cdc solid;
+}
+
+
 .contenedor{
   margin: 70px auto;
   text-align: center;
