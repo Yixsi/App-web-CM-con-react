@@ -1,8 +1,11 @@
-import { NavLink, Link } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 import React from 'react'
 import logo from "media/logo.png"
 
 function Header() {
+
+    const rolIniciarSeccion = 0;
+
     return (
         <header className="mb-auto">
             <nav className="navbar navbar-expand-lg navbar-dark bg-black">
@@ -35,12 +38,18 @@ function Header() {
                                     <NavLink to="/contacto" className="nav-link">Contacto</NavLink>
                                 </li>
                                 <li>
-                                    <Link to="/login" className="px-3 text-light perfil dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i className="far fa-user-circle"></i></Link>
 
-                                    <div className="dropdown-menu" aria-labelledby="navbar-dropdown">
-                                        <a className="dropdown-item menuperfil cerrar" href="/#"><i className="fas fa-exchange-alt"></i> Cambiar Contraseña</a>
-                                        <a className="dropdown-item menuperfil cerrar" href="/#"><i className="fas fa-sign-out-alt m-1"></i>cerrar sesion</a>
-                                    </div>
+                                    {rolIniciarSeccion > 0
+                                        ?   <div>
+                                                <a  href="/#" className="px-3 text-light perfil dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i className="far fa-user-circle"></i></a>
+
+                                                <div className="dropdown-menu" aria-labelledby="navbar-dropdown">
+                                                    <Link to="" className="dropdown-item menuperfil cerrar"><i className="fas fa-exchange-alt"></i>  Cambiar contraseña</Link>
+                                                    <Link to="" className="dropdown-item menuperfil cerrar"><i className="fas fa-sign-out-alt m-1"></i> Cerrar sesion</Link>
+                                                </div>
+                                            </div>
+                                        : <Link to="/login" className="px-3 text-light perfil" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i className="far fa-user-circle"></i></Link>
+                                    }
                                 </li>
                             </ul>
                         </div>
