@@ -3,6 +3,7 @@ import Nosotros from "pages/Nosotros"
 import Articulos from 'pages/Articulos';
 import Contacto from 'pages/Contacto';
 import Login from 'pages/login';
+import Dashboard from 'pages/dashboard'
 import "style/styles.css"
 
 import {
@@ -20,6 +21,8 @@ function App() {
     
       <Router>
         <Routes>
+
+          <Route exact path = "/dashboard" element= {<Dashboard/>} />
 
           <Route exact path = "/login" element= {<Login/>} />
         
