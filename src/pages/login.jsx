@@ -64,7 +64,7 @@ function Login() {
                                 <h2>Inicicar Sesion</h2>
                                 <div className=" fontuser element">
                                     <i className="fas fa-user"></i>
-                                    <div className="label"><label htmlFor="email">Usuario</label></div>
+                                    <div className="label"><label htmlFor="email">Correo electrónico</label></div>
                                     <input id="usuarioLogin" type="text" name="usuario" placeholder="Escriba su usuario" value={usuario} onChange={(e)=>setUsuario(e.target.value)} required/><br />
                                 </div>
                                 <div className="element fontpass">
