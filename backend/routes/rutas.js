@@ -1,8 +1,8 @@
 import express from 'express';
 import Articulos from '../models/articulos';
+import UsuariosControlador from '../controller/Usuarios.controller';
 import Usuarios from '../models/usuarios';
 const router = express.Router();
-
 /*Crear un nuevo producto*/
 
 router.post('/nuevo-articulo', async(req, res) => {
@@ -101,6 +101,9 @@ router.delete('/borrar-articulo/:id', async(req,res)=>{
 });
 
 /*Crear usuarios*/
+router.post('/prueba',UsuariosControlador.crear)
+router.post("/login",UsuariosControlador.login)
+
 router.post('/nuevo-usuario', async(req, res) => {
 
     const body = req.body;
