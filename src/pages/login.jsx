@@ -65,7 +65,7 @@ function Login() {
                                 <div className=" fontuser element">
                                     <i className="fas fa-user"></i>
                                     <div className="label"><label htmlFor="email">Correo electrónico</label></div>
-                                    <input id="usuarioLogin" type="text" name="usuario" placeholder="Escriba su usuario" value={usuario} onChange={(e)=>setUsuario(e.target.value)} required/><br />
+                                    <input id="usuarioLogin" type="email" name="usuario" placeholder="Escriba su usuario" value={usuario} onChange={(e)=>setUsuario(e.target.value)} required/><br />
                                 </div>
                                 <div className="element fontpass">
                                     <i className="fas fa-key"></i>
