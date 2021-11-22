@@ -17,7 +17,7 @@ function Login(){
                         <div className="table">
                         <div className="table-cell">
                             <p>
-                            Have an account?
+                            Tienesss Cuenta?
                             </p>
                             <div className="btn">
                             Log in
@@ -29,10 +29,10 @@ function Login(){
                         <div className="table">
                         <div className="table-cell">
                             <p>
-                            Don't have an account?
+                            No tienes cuenta?
                             </p>
-                            <div className="btn">
-                            Sign up
+                            <div className="btn width: 80px">
+                            Registro
                             </div>
                         </div>
                         </div>
@@ -42,7 +42,7 @@ function Login(){
                     <div className="form-item log-in">
                         <div className="table">
                         <div className="table-cell">
-                            <input name="Username" placeholder="Username" type="text" /><input name="Password" placeholder="Password" type="Password" />
+                            <input name="Username" placeholder="Usuario" type="text" /><input name="Password" placeholder="Contraseña" type="Password" />
                             <div className="btn">
                             Log in
                             </div>
@@ -52,9 +52,9 @@ function Login(){
                     <div className="form-item sign-up">
                         <div className="table">
                         <div className="table-cell">
-                            <input name="email" placeholder="Email" type="text" /><input name="fullName" placeholder="Full Name" type="text" /><input name="Username" placeholder="Username" type="text" /><input name="Password" placeholder="Password" type="Password" />
+                            <input name="email" placeholder="Email" type="text" /><input name="fullName" placeholder="Nombre Completo" type="text" /><input name="Username" placeholder="Usuario" type="text" /><input name="Password" placeholder="Contraseña" type="Password" />
                             <div className="btn">
-                            Sign up
+                            Regitrarse
                             </div>
                         </div>
                         </div>
