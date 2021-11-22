@@ -31,7 +31,7 @@ function Login(){
                             <p>
                             No tienes cuenta?
                             </p>
-                            <div className="btn width: 80px">
+                            <div className="btn ">
                             Registro
                             </div>
                         </div>

@@ -460,7 +460,7 @@ body {
   width: 100%;
   height: 100%;
   font-family: "Roboto", sans-serif;
-  background-color: #2979FF;
+  background-color: #ADADAC;
   overflow: hidden;
 }
 
@@ -484,7 +484,7 @@ body {
   width: 600px;
   margin: 30px auto 0;
   height: 320px;
-  background-color: #82B1FF;
+  background-color: #0C0B0A;
   top: 50%;
   margin-top: -160px;
   -moz-transition: all 0.5s;
@@ -505,7 +505,7 @@ body {
   position: absolute;
   left: 152px;
   top: 50px;
-  background-color:#009688;
+  background-color:#F06D06;
   transform: rotateX(52deg) rotateY(15deg) rotateZ(-38deg);
   width: 300px;
   height: 285px;
@@ -515,7 +515,7 @@ body {
   transition: all 0.5s;
 }
 .container1 .box:after {
-  background-color: #18FFFF;
+  background-color: #F4A04B;
   top: -10px;
   left: 80px;
   width: 320px;
@@ -530,7 +530,7 @@ body {
   margin: 0 auto;
   width: 80px;
   color: #fff;
-  background-color: #03A9F4;
+  background-color: #DF7408;
   opacity: 1;
   -moz-transition: all 0.5s;
   -o-transition: all 0.5s;
@@ -593,7 +593,7 @@ body {
   width: 305px;
   height: 380px;
   background-color: #fff;
-  box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 15px 0 rgba(223, 116, 8, 0.2);
   -moz-transition: all 0.5s;
   -o-transition: all 0.5s;
   -webkit-transition: all 0.5s;
@@ -604,7 +604,7 @@ body {
   position: absolute;
   left: 160px;
   top: -50px;
-  color: #5356ad;
+  color: #fff;
   font-size: 130px;
   opacity: 0;
   -moz-transition: all 0.5s;
@@ -614,7 +614,7 @@ body {
 }
 .container1 .container1-form .btn {
   position: relative;
-  box-shadow: 0 0 10px 1px #18FFFF;
+  box-shadow: 0 0 10px 1px #E9AF76;
   margin-top: 30px;
 }
 .container1 .form-item {
