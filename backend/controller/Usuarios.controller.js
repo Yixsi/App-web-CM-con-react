@@ -3,6 +3,11 @@ import bcrypt from "bcryptjs"
 import jwt from "jsonwebtoken"
 
 const usuarioCtrl = {}
+const maxAge = 60
+
+function createToken(id){
+    return jwt.sign({id},process.env.JWT_SECRET,{expiresIn:maxAge})
+}
 
 usuarioCtrl.crear = async(req,res)=>{
     const {name,email,user,pass} = req.body
@@ -14,22 +19,28 @@ usuarioCtrl.crear = async(req,res)=>{
         role: 1
     })
 
-    const User = await Usuario.findOne({email:email})
+    const User = await Usuario.findOne({
+        $or: [
+            { "email" : email },
+            { "user": user }
+        ]
+    })
+
     if(User){
         res.json({
-            mensaje: 'El usuario ya existe'
+            mensaje: 'El correo y/o usuario ya existentes'
         })
     }
     
     else{
         NuevoUsuario.pass = await bcrypt.hash(pass,10) 
-        const token = jwt.sign({_id:NuevoUsuario._id},'Secreta')
         await NuevoUsuario.save()
+        const token = createToken(user._id)
+        res.cookie("jwt",token,{httpOnly:true,maxAge: maxAge*10000});
         res.json({
             mensaje: 'Bienvenido',
             id: NuevoUsuario._id,
             user: NuevoUsuario.user,
-            token
         }) 
     }
 }
@@ -39,27 +50,29 @@ usuarioCtrl.login = async(req,res)=>{
     const user = await Usuario.findOne({email:email})
     if(!user){
         return res.json({
-            mensaje: 0
+            mensaje: "Email y/o contraseña incorrectos"
         })
     }
-
     const match = await bcrypt.compare(pass,user.pass)
     if(match){
-        console.log("Hola")
-        const token = jwt.sign({_id: user._id},"Secreta")
+        const token = createToken(user._id)
+        res.cookie("jwt",token,{httpOnly:true,maxAge: maxAge*100});
         res.json({
             mensaje: 1,
-            id: user.id,
+            id: user._id,
             nombre: user.nombre,
             role: user.role,
-            token
         })
     }
     else{
         res.json({
-            mensaje: 2
+            mensaje: "Email y/o contraseña incorrectos"
         })
     }
+}
+
+usuarioCtrl.cerrarSesion = async(req,res)=>{
+    res.cookie("jwt","",1);
 }
 
 module.exports = usuarioCtrl

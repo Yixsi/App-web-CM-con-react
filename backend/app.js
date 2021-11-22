@@ -2,6 +2,14 @@ import express from'express';
 import morgan from'morgan';
 import cors from 'cors';
 import path from 'path';
+import cookieParser from "cookie-parser"
+require("dotenv").config();
+
+const corsOptions = {
+    origin:'http://localhost:3000', 
+    credentials:true,            //access-control-allow-credentials:true
+    optionSuccessStatus:200,
+}
 
 const app = express();
 
@@ -20,8 +28,9 @@ mongoose.connect(uri, options,{
 
 
 //MIDDLEWARE
+app.use(cookieParser())
 app.use(morgan('dev'));
-app.use(cors({origen: "*"}));
+app.use(cors(corsOptions));
 app.use(express.json());
 app.use(express.urlencoded({extended:true}))
 app.use(express.static(path.join(__dirname,'public')))

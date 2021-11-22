@@ -101,23 +101,13 @@ router.delete('/borrar-articulo/:id', async(req,res)=>{
 });
 
 /*Crear usuarios*/
-router.post('/prueba',UsuariosControlador.crear)
+router.post('/nuevo-usuario',UsuariosControlador.crear)
+
+/* Login */ 
 router.post("/login",UsuariosControlador.login)
 
-router.post('/nuevo-usuario', async(req, res) => {
-
-    const body = req.body;
-
-    try {
-        const usuariosDB = await Usuarios.create(body);
-        res.status(200).json(usuariosDB);
-    } catch (error) {
-        return res.status(500).json({
-        mensaje: 'Ocurrió un error',
-        error
-        })
-    }
-});
+/* Cerrar sesion */
+router.post("/cerrar-sesion",UsuariosControlador.cerrarSesion)
 
 /*Listar usuarios*/
 router.get('/listar-usuarios', async(req, res) => {

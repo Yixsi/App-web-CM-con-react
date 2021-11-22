@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useMemo} from "react";
 import { Link, NavLink,useNavigate,useLocation } from 'react-router-dom'
 import logo from "media/logo.png"
+import axios from "axios"
 import Cookies from "universal-cookie"
 
 function Header() {
@@ -16,6 +17,10 @@ function Header() {
     },[cookies]);
 
     function cerrarSesion(){
+        axios.post("/cerrar-sesion")
+        .then((res)=>{
+            console.log(res)
+        })
         cookies.set('rolUsuario',0,{path: "/"})
         if (location.pathname === "/"){
             window.location.reload(false);

@@ -1,33 +1,43 @@
-import React, { useState  } from "react";
+import React, { useState,useEffect  } from "react";
 import {useNavigate} from 'react-router-dom';
 import axios from "axios";
 import Layout from "layouts/Layout"
 import Cookies from "universal-cookie"
 
+axios.defaults.withCredentials = true;
+
 function Login() {
 
     const cookies = new Cookies();
     const navigate = useNavigate()
+
+    useEffect(() => {
+        const rolUsuario = (cookies.get("rolUsuario"));
+        if(rolUsuario > 0 ){
+            console.log(rolUsuario)
+            navigate('/')
+        }
+    },)
+
     const[name,setName] =useState("")
     const[email,setEmail] =useState("")
     const[user,setUser] =useState("")
     const[pass,setPass] =useState("")
     const [usuario,setUsuario] = useState("")
     const [contraseña,setContraseña] = useState("")
-    const [mensaje, setMensaje] = useState([]) 
+    const [mensaje, setMensaje] = useState("") 
+    const[mensajeRegistrar,setMensajeRegistrar] = useState("")
 
     function registrarUsuario(e){
         e.preventDefault()
         const atributos = {
             name,email,user,pass
         }
-        axios.post('/prueba',atributos)
+        axios.post('/nuevo-usuario',atributos)
         .then(res=>{
-            /* navigate('/') */
-            setName("")
-            setEmail("")
-            setUser("")
-            setPass("")
+            setMensajeRegistrar(res.data.mensaje)
+           /*  cookies.set('rolUsuario',1)
+            navigate('/') */
         }) 
     }
 
@@ -36,19 +46,14 @@ function Login() {
         const datos = {
             email:usuario,pass:contraseña
         }
-        console.log(datos)
         axios.post('/login',datos)
         .then(res=>{
-            if(res.data.mensaje === 0){
-                setMensaje("El usuario no se encuentra registrado")
-            }
-            else if(res.data.mensaje === 2){
-                setMensaje("El usuario o la contraseña que ingresaste es incorrecta")
-            }
-            else{
-                console.log(res.data)
+            if(res.data.mensaje === 1){
                 cookies.set('rolUsuario',res.data.role)
                 navigate('/')
+            }
+            else{
+                setMensaje(res.data.mensaje)
             }
         })
     }
@@ -73,7 +78,7 @@ function Login() {
                                     <input id="passwordLogin" type="password" name="password" placeholder="Escriba su contraseña" value={contraseña} onChange={(e)=>setContraseña(e.target.value)} required/><br />
                                 </div>
                                 <div className="element">
-                                    <p className="text-dark">{mensaje}</p>
+                                    <p className="text" style = {{color:"#f6821f",fontWeight:"bold"}}>{mensaje}</p>
                                 </div>
                                 <input id="botonLogin" type="submit" className="btn btn-primary"  />
                             </div>
@@ -106,7 +111,9 @@ function Login() {
                                     <div className="label"><label htmlFor="password">Contraseña</label></div>
                                     <input id="password" type="password" name="password" placeholder="Escriba su contraseña"  value={pass} onChange={(e)=>setPass(e.target.value)}/>
                                 </div><br />
-                                
+                                <div className="element">
+                                    <p  style = {{color:"#f6821f",fontWeight:"bold"}} className="text">{mensajeRegistrar}</p>
+                                </div>
 
                                 <input id="boton" className="btn btn-primary" type="submit" value="Registrarse"/>
                             </div>
