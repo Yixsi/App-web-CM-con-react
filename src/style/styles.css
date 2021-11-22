@@ -481,12 +481,12 @@ body {
 
 .container1 {
   position: relative;
-  width: 600px;
+  width: 750px;
   margin: 30px auto 0;
-  height: 320px;
+  height: 350px;
   background-color: #0C0B0A;
   top: 50%;
-  margin-top: -160px;
+  margin-top: -120px;
   -moz-transition: all 0.5s;
   -o-transition: all 0.5s;
   -webkit-transition: all 0.5s;
@@ -530,7 +530,7 @@ body {
   margin: 0 auto;
   width: 80px;
   color: #fff;
-  background-color: #DF7408;
+  background-color: #e2620c;
   opacity: 1;
   -moz-transition: all 0.5s;
   -o-transition: all 0.5s;
@@ -672,7 +672,7 @@ body {
   position: absolute;
   left: 51px;
   top: 5px;
-  color: #5356ad;
+  color: #e2620c;
   font-size: 130px;
   opacity: 1;
 }
