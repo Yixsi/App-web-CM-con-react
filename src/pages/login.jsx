@@ -1,10 +1,81 @@
 import Layout from "layouts/Layout"
 
+
 function Login(){
 
     return(
         <Layout>
             <div className="container mx-auto">
+                <section className="row d-flex">
+
+            <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+                <div className="container1">
+                <div className="box"></div>
+                <div className="container1-forms">
+                    <div className="container1-info">
+                    <div className="info-item">
+                        <div className="table">
+                        <div className="table-cell">
+                            <p>
+                            Have an account?
+                            </p>
+                            <div className="btn">
+                            Log in
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                    <div className="info-item">
+                        <div className="table">
+                        <div className="table-cell">
+                            <p>
+                            Don't have an account?
+                            </p>
+                            <div className="btn">
+                            Sign up
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                    </div>
+                    <div className="container1-form">
+                    <div className="form-item log-in">
+                        <div className="table">
+                        <div className="table-cell">
+                            <input name="Username" placeholder="Username" type="text" /><input name="Password" placeholder="Password" type="Password" />
+                            <div className="btn">
+                            Log in
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                    <div className="form-item sign-up">
+                        <div className="table">
+                        <div className="table-cell">
+                            <input name="email" placeholder="Email" type="text" /><input name="fullName" placeholder="Full Name" type="text" /><input name="Username" placeholder="Username" type="text" /><input name="Password" placeholder="Password" type="Password" />
+                            <div className="btn">
+                            Sign up
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+                </div>
+            </section>
+        </div>        
+
+        </Layout>
+    )
+
+}
+
+export default Login
+
+
+// codigo anterior
+
+{/* <div className="container mx-auto">
                 <section className="row d-flex">
 
                     <div className="col-10 col-lg-5 mx-auto">
@@ -66,14 +137,4 @@ function Login(){
 
                 
             </section>    
-            </div>
-
-
-
-            
-        </Layout>
-    )
-
-}
-
-export default Login
+            </div> */}
