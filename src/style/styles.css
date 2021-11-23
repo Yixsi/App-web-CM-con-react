@@ -481,12 +481,12 @@ body {
 
 .container1 {
   position: relative;
-  width: 750px;
+  width: 700px;
   margin: 30px auto 0;
   height: 350px;
   background-color: #0C0B0A;
   top: 50%;
-  margin-top: -120px;
+  margin-top: -50px;
   -moz-transition: all 0.5s;
   -o-transition: all 0.5s;
   -webkit-transition: all 0.5s;

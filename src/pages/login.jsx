@@ -10,10 +10,10 @@ function Login(){
         <Layout>
             <div className="container mx-auto">
                 <section className="row d-flex">
-                    <div className="col-10 col-lg-7 mx-auto">
+                    <div className="col-10 col-lg-7 col-md-4 mx-auto">
 
                     <form action="server" method="POST">
-                            <div className="contenedor">
+                        <div className="contenedor col-10 col-lg-10 mx-auto">
 
                         <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
                             <div className={`container1${on ? " log-in":""}`}>
