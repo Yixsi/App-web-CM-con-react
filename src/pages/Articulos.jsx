@@ -1,5 +1,4 @@
 import Layout from "layouts/Layout"
-import img from "media/termovalle.jpg"
 import "style/Articulos.css"
 
 function Articulos(){
@@ -89,12 +88,12 @@ function Articulos(){
                                         <div className="card-body border-top text-start">
                                             <h6 className="card-title color-marca">{i.clase}</h6>                                    
                                             <h5 className="card-title text-black">{i.titulo}</h5>
-                                            <p className="card-text text-black">
-                                                <section className="review__articulo__text">
+                                            <div className="review__articulo__text">
+                                                <p className="card-text text-black">
                                                     {i.descripcion}
-                                                </section>
-                                                <a  href = "item.url" className="text-danger">  Leer más...</a>
-                                            </p>
+                                                </p>
+                                            </div>
+                                            <a  href = "item.url" className="text-danger">  Leer más...</a>
                                         </div>
                                     </div>
                                 </div>
@@ -111,12 +110,12 @@ function Articulos(){
                                         <div className="card-body border-top text-start">
                                             <h6 className="card-title color-marca">{i.clase}</h6>                                    
                                             <h5 className="card-title text-black">{i.titulo}</h5>
-                                            <p className="card-text text-black">
-                                                <section className="review__articulo__text">
+                                            <div className="review__articulo__text">
+                                                <p className="card-text text-black">
                                                     {i.descripcion}
-                                                </section>
-                                                <a  href = "item.url" className="text-danger">  Leer más...</a>
-                                            </p>
+                                                </p>
+                                            </div>
+                                            <a  href = "item.url" className="text-danger">  Leer más...</a>
                                         </div>
                                     </div>
                                 </div>
@@ -133,12 +132,12 @@ function Articulos(){
                                         <div className="card-body border-top text-start">
                                             <h6 className="card-title color-marca">{i.clase}</h6>                                    
                                             <h5 className="card-title text-black">{i.titulo}</h5>
-                                            <p className="card-text text-black">
-                                                <section className="review__articulo__text">
+                                            <div className="review__articulo__text">
+                                                <p className="card-text text-black">
                                                     {i.descripcion}
-                                                </section>
-                                                <a  href = "item.url" className="text-danger">  Leer más...</a>
-                                            </p>
+                                                </p>
+                                            </div>
+                                            <a  href = "item.url" className="text-danger">  Leer más...</a>
                                         </div>
                                     </div>
                                 </div>
@@ -155,12 +154,12 @@ function Articulos(){
                                         <div className="card-body border-top text-start">
                                             <h6 className="card-title color-marca">{i.clase}</h6>                                    
                                             <h5 className="card-title text-black">{i.titulo}</h5>
-                                            <p className="card-text text-black">
-                                                <section className="review__articulo__text">
+                                            <div className="review__articulo__text">
+                                                <p className="card-text text-black">
                                                     {i.descripcion}
-                                                </section>
-                                                <a  href = "item.url" className="text-danger">  Leer más...</a>
-                                            </p>
+                                                </p>
+                                            </div>
+                                            <a  href = "item.url" className="text-danger">  Leer más...</a>
                                         </div>
                                     </div>
                                 </div>
