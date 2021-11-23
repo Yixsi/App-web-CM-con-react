@@ -528,7 +528,7 @@ body {
   cursor: pointer;
   text-align: center;
   margin: 0 auto;
-  width: 80px;
+  width: 90px;
   color: #fff;
   background-color: #e2620c;
   opacity: 1;
@@ -541,7 +541,7 @@ body {
   opacity: 0.7;
 }
 .container1 .btn, .container1 input {
-  padding: 10px 15px;
+  padding: 10px 5px;
 }
 .container1 input {
   margin: 0 auto 15px;
@@ -591,7 +591,7 @@ body {
   left: 30px;
   top: -30px;
   width: 305px;
-  height: 380px;
+  height: 410px;
   background-color: #fff;
   box-shadow: 0 0 15px 0 rgba(223, 116, 8, 0.2);
   -moz-transition: all 0.5s;

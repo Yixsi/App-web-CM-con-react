@@ -10,6 +10,10 @@ function Login(){
         <Layout>
             <div className="container mx-auto">
                 <section className="row d-flex">
+                    <div className="col-10 col-lg-7 mx-auto">
+
+                    <form action="server" method="POST">
+                            <div className="contenedor">
 
             <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
                 <div className={`container1${on ? " log-in":""}`}>
@@ -19,8 +23,8 @@ function Login(){
                         <div className="info-item">
                             <div className="table">
                             <div className="table-cell">
-                                <p>
-                                Tienesss Cuenta?
+                                <p style ={{color:"white"}}>
+                                YA tienes una cuenta?
                                 </p>
                                 <div className="btn"  onClick = {()=> setOn(false)}>
                                 Log in
@@ -31,7 +35,7 @@ function Login(){
                         <div className="info-item">
                             <div className="table">
                             <div className="table-cell">
-                                <p>
+                                <p style ={{color:"white"}}>
                                 No tienes cuenta?
                                 </p>
                                 <div className="btn " onClick = {()=> setOn(true)}>
@@ -64,6 +68,9 @@ function Login(){
                         </div>
                         </div>
                     </div>
+                </div>
+                </div>
+                </form>
                 </div>
             </section>
         </div>        
