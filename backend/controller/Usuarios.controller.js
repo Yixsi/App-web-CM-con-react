@@ -39,6 +39,7 @@ usuarioCtrl.crear = async(req,res)=>{
         res.cookie("jwt",token,{httpOnly:true,maxAge: maxAge*10000});
         res.json({
             mensaje: 'Bienvenido',
+            unlock: 1,
             id: NuevoUsuario._id,
             user: NuevoUsuario.user,
         }) 

@@ -38,9 +38,11 @@ function Login() {
         }
         axios.post('/nuevo-usuario', atributos)
             .then(res => {
+                if(res.data.unlock === 1){
+                    cookies.set('rolUsuario',1)
+                    navigate('/')
+                }
                 setMensajeRegistrar(res.data.mensaje)
-                cookies.set('rolUsuario',1)
-                navigate('/')
             })
     }
 
