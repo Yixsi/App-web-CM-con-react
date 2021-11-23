@@ -1,5 +1,6 @@
 import Layout from "layouts/Layout"
 
+
 function Contacto(){
     return(
         <Layout>
@@ -30,12 +31,21 @@ function Contacto(){
 
                     </div>
 
+                    <section className="tarjeta row mb-5 .bg-dark col-lg-4 col-md-6 col-sm-12">
+                    <div className="wrapper mx-auto">
+                        <div className="card">
+                            <img alt="" src="https://image.freepik.com/foto-gratis/vendedor-cuenta-sobre-producto_85574-8279.jpg"/>
+                            <div className="info">
+                            <h1>Visítanos</h1>
+                            <p>CL 14D #43A-34 Manzanares I<br/>Poblado campestre, Candelaria<br/>Cali, Colombia</p>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    </section>
+
                     <div className="col-12 col-lg-6 mx-auto">
                         <aside id="info">
-                            <article className="mt-3">
-                                <h2>Visítanos</h2>
-                                <p>CL 14D #43A-34 Manzanares I<br/>Poblado campestre, Candelaria<br/>Cali, Colombia</p>
-                            </article>
                             <br/>
                             <article className="mb-2">
                                 <h2>Síguenos</h2>

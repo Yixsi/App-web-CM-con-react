@@ -81,6 +81,19 @@ h2{
 }
 /*Formularios*/
 
+.registro{
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.registro .element textarea{
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 0.5px #cdc solid;
+}
+
+
 .contenedor{
   margin: 70px auto;
   text-align: center;
@@ -172,9 +185,9 @@ h2{
   color: orange;
 }
 
-/* .far:hover {
+.far:hover {
   color: black;
-} */
+}
 
 
 /*BARRA LATERAL*/
@@ -399,7 +412,7 @@ h2{
 .fontsearch i{
     position: absolute;
     color: rgb(216, 208, 208);
-    margin: 3% 6% 3% 84%;
+    margin: 3% 6% 3% 3%;
     font-size: 1.5em;
 }
 .fontuser {
@@ -430,4 +443,7 @@ h2{
 
 .navbar-dark .navbar-nav .show > .nav-link, .navbar-dark .navbar-nav .nav-link.active{
   color: #f6821f;
+}
+.find{
+  padding-left: 35px;
 }
