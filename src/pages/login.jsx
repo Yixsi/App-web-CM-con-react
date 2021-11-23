@@ -15,62 +15,62 @@ function Login(){
                     <form action="server" method="POST">
                             <div className="contenedor">
 
-            <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-                <div className={`container1${on ? " log-in":""}`}>
-                    <div className="box"></div>
-                    <div className="container1-forms">
-                        <div className="container1-info">
-                        <div className="info-item">
-                            <div className="table">
-                            <div className="table-cell">
-                                <p style ={{color:"white"}}>
-                                YA tienes una cuenta?
-                                </p>
-                                <div className="btn"  onClick = {()=> setOn(false)}>
-                                Log in
+                        <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+                            <div className={`container1${on ? " log-in":""}`}>
+                                <div className="box"></div>
+                                <div className="container1-forms">
+                                    <div className="container1-info">
+                                    <div className="info-item">
+                                        <div className="table">
+                                        <div className="table-cell">
+                                            <p style ={{color:"white"}}>
+                                            ¿YA tienes una cuenta?
+                                            </p>
+                                            <div className="btn"  onClick = {()=> setOn(false)}>
+                                            Log in
+                                            </div>
+                                        </div>
+                                        </div>
+                                    </div>
+                                    <div className="info-item">
+                                        <div className="table">
+                                        <div className="table-cell">
+                                            <p style ={{color:"white"}}>
+                                            ¿No tienes cuenta?
+                                            </p>
+                                            <div className="btn " onClick = {()=> setOn(true)}>
+                                            Registro
+                                            </div>
+                                        </div>
+                                        </div>
+                                    </div>
+                                    </div>
+                                    <div className="container1-form">
+                                    <div className="form-item log-in">
+                                        <div className="table">
+                                        <div className="table-cell">
+                                            <input name="Username" placeholder="Usuario" type="text" /><input name="Password" placeholder="Contraseña" type="Password" />
+                                            <div className="btn">
+                                            Log in
+                                            </div>
+                                        </div>
+                                        </div>
+                                    </div>
+                                    <div className="form-item sign-up">
+                                        <div className="table">
+                                        <div className="table-cell">
+                                            <input name="email" placeholder="Email" type="text" /><input name="fullName" placeholder="Nombre Completo" type="text" /><input name="Username" placeholder="Usuario" type="text" /><input name="Password" placeholder="Contraseña" type="Password" />
+                                            <div className="btn">
+                                            Regitrarse
+                                            </div>
+                                        </div>
+                                        </div>
+                                    </div>
+                                    </div>
                                 </div>
                             </div>
-                            </div>
                         </div>
-                        <div className="info-item">
-                            <div className="table">
-                            <div className="table-cell">
-                                <p style ={{color:"white"}}>
-                                No tienes cuenta?
-                                </p>
-                                <div className="btn " onClick = {()=> setOn(true)}>
-                                Registro
-                                </div>
-                            </div>
-                            </div>
-                        </div>
-                        </div>
-                        <div className="container1-form">
-                        <div className="form-item log-in">
-                            <div className="table">
-                            <div className="table-cell">
-                                <input name="Username" placeholder="Usuario" type="text" /><input name="Password" placeholder="Contraseña" type="Password" />
-                                <div className="btn">
-                                Log in
-                                </div>
-                            </div>
-                            </div>
-                        </div>
-                        <div className="form-item sign-up">
-                            <div className="table">
-                            <div className="table-cell">
-                                <input name="email" placeholder="Email" type="text" /><input name="fullName" placeholder="Nombre Completo" type="text" /><input name="Username" placeholder="Usuario" type="text" /><input name="Password" placeholder="Contraseña" type="Password" />
-                                <div className="btn">
-                                Regitrarse
-                                </div>
-                            </div>
-                            </div>
-                        </div>
-                        </div>
-                    </div>
-                </div>
-                </div>
-                </form>
+                    </form>
                 </div>
             </section>
         </div>        
