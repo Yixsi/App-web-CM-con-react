@@ -137,8 +137,8 @@
   position: absolute;
   left: 30px;
   top: -30px;
-  width: 305px;
-  height: 410px;
+  width: 50%;
+  height: 120%;
   background-color: #fff;
   box-shadow: 0 0 15px 0 rgba(223, 116, 8, 0.2);
   -moz-transition: all 0.5s;
