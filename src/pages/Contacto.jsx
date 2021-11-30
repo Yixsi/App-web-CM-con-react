@@ -1,4 +1,5 @@
 import Layout from "layouts/Layout";
+import "style/contacto.css";
 
 function Contacto() {
   return (
@@ -67,17 +68,6 @@ function Contacto() {
                     <br />
                     Cali, Colombia
                   </p>
-                </div>
-              </div>
-            </div>
-          </section>
-
-          <div className="col-12 col-lg-6 mx-auto">
-            <aside id="info">
-              <br />
-              <article className="mb-2">
-                <h2>Síguenos</h2>
-                <div className="mx-auto">
                   <a href="https://www.facebook.com/Carvajalmateriales">
                     <i
                       className="fab fa-facebook"
@@ -110,11 +100,10 @@ function Contacto() {
                     {" "}
                     Whatsapp
                   </p>
-                  <br />
                 </div>
-              </article>
-            </aside>
-          </div>
+              </div>
+            </div>
+          </section>
         </section>
       </div>
     </Layout>
