@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState,useEffect  } from "react";
 import Layout from "layouts/Layout";
 import axios from "axios"
 import "style/Productos.css";
@@ -9,8 +9,8 @@ function Productos() {
   
   const [productosData,setProductosData] = useState([])
   
-  React.useEffect(() => {
-    axios.get("/listar-articulos")
+  useEffect(() => {
+    axios.get("/api/listar-articulos")
     .then((response) =>{
       setProductosData(response.data)
     })

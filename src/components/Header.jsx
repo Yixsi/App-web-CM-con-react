@@ -1,31 +1,34 @@
-import React, { useState, useEffect, useMemo} from "react";
+import React, { useState, useEffect} from "react";
 import { Link, NavLink,useNavigate,useLocation } from 'react-router-dom'
 import logo from "media/logo.png"
 import axios from "axios"
-import Cookies from "universal-cookie"
 
 function Header() {
 
-    const cookies = useMemo(()=> new Cookies(), []) 
     const location = useLocation();
     const navigate = useNavigate()
     const [rolIniciarSeccion,setRol] = useState(0);
 
 
     useEffect(() =>{
-        setRol(cookies.get("rolUsuario"));
-    },[cookies]);
+        axios.get("/auth/verificar-user")
+        .then((res)=>{
+            setRol(res.data.role)
+        }).catch(err=>{
+            console.log(err)
+        })
+    },[]);
 
     function cerrarSesion(){
-        axios.post("/cerrar-sesion")
+        axios
+        .post("/api/cerrar-sesion")
         .then((res)=>{
             console.log(res)
         })
-        cookies.set('rolUsuario',0,{path: "/"})
         if (location.pathname === "/"){
             window.location.reload(false);
-        }
-        navigate("/")
+        } 
+        navigate("/") 
     }
 
     return (
@@ -66,9 +69,9 @@ function Header() {
                                                 <a  href="/#" className="px-3 text-light perfil dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i className="far fa-user-circle"></i></a>
 
                                                 <div className="dropdown-menu" aria-labelledby="navbar-dropdown">
-                                                    <Link to="/dashboard" className="dropdown-item menuperfil cerrar"><i className="fas fa-exchange-alt"></i> Dashboard</Link>
+                                                    <Link style = { rolIniciarSeccion > 1 ? {} :{display: 'none'}} to="/dashboard" className="dropdown-item menuperfil cerrar"><i className="fas fa-exchange-alt"></i> Dashboard</Link>
                                                     <Link to="" className="dropdown-item menuperfil cerrar"><i className="fas fa-exchange-alt"></i>  Cambiar contraseña</Link>
-                                                    <Link to="/" className="dropdown-item menuperfil cerrar" onClick= {(() => cerrarSesion())} ><i className="fas fa-sign-out-alt m-1"></i> Cerrar sesion</Link>
+                                                    <button to="/" className="dropdown-item menuperfil cerrar" onClick= {(() => cerrarSesion())} ><i className="fas fa-sign-out-alt m-1"></i> Cerrar sesion</button>
                                                 </div>
                                             </div>
                                         : <Link to="/login" className="px-3 text-light perfil" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i className="far fa-user-circle"></i></Link>

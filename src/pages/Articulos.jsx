@@ -36,7 +36,7 @@ function Articulos(){
         },
         {
             url:"https://mejorconsalud.as.com/hacer-mesa-auxiliar/",
-            img: "https://mesaauxiliares.com/wp-content/uploads/2020/12/mesa-auxiliar-de-comedor-300x200.jpg",
+            img: "https://decoracion2.com/imagenes/2016/06/mesa-auxiliar-de-madera-y-metal-foto-final.jpg",
             clase: "Tutorial",
             titulo: "¿Cómo hacer una mesa auxiliar de madera y metal?",
             descripcion: "Las mesas auxiliares son indispensables en el hogar porque resultan muy prácticas y aportan estilo. ¡Aprende a hacer una tú mismo! Hacer una mesa auxiliar es una gran idea. Se trata de un mueble funcional y aporta estilo a la decoración. Este tipo de mesas complementan muy bien diversos espacios; permiten reposar objetos como floreros, libros o cualquier otro tipo de elemento decorativo." 

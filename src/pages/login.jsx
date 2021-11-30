@@ -1,24 +1,14 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { useNavigate } from 'react-router-dom';
 import axios from "axios";
 import Layout from "layouts/Layout"
-import Cookies from "universal-cookie"
-import "style/estilos-login.css" 
+import "style/estilos-login.css"
 
 axios.defaults.withCredentials = true;
 
 function Login() {
 
-    const cookies = new Cookies();
     const navigate = useNavigate()
-
-    useEffect(() => {
-        const rolUsuario = (cookies.get("rolUsuario"));
-        if (rolUsuario > 0) {
-            console.log(rolUsuario)
-            navigate('/')
-        }
-    })
 
     const [on, setOn] = useState(false)
     const [name, setName] = useState("")
@@ -36,23 +26,25 @@ function Login() {
         const atributos = {
             name, email, user, pass
         }
-        axios.post('/nuevo-usuario', atributos)
+        axios.post('/api/nuevo-usuario', atributos)
             .then(res => {
-                setMensajeRegistrar(res.data.mensaje)
-                cookies.set('rolUsuario',1)
-                navigate('/')
+                if(res.data.mensaje === 0){
+                    navigate("/")
+                }
+                else{
+                    setMensajeRegistrar(res.data.mensaje)
+                }
             })
     }
 
-    const handleSubmit = (e) => {
+    function iniciarSesion(e) {
         e.preventDefault()
         const datos = {
             email: usuario, pass: contraseña
         }
-        axios.post('/login', datos)
+        axios.post('/api/login', datos)
             .then(res => {
                 if (res.data.mensaje === 1) {
-                    cookies.set('rolUsuario', res.data.role)
                     navigate('/')
                 }
                 else {
@@ -64,7 +56,7 @@ function Login() {
     return (
         <Layout>
 
-            <div className="container mx-auto">
+            <div className="container mx-auto" >
                 <section className="row d-flex">
                     <div className="col-10 col-lg-7 mx-auto">
                         <div className="contenedor">
@@ -100,7 +92,7 @@ function Login() {
 
                                     <div className="container1-form">
 
-                                        <form onSubmit = {handleSubmit}>
+                                        <form onSubmit={iniciarSesion}>
                                             <div className="form-item log-in">
                                                 <div className="table">
                                                     <div className="table-cell">
@@ -115,16 +107,16 @@ function Login() {
                                             </div>
                                         </form>
 
-                                        <form onSubmit = {registrarUsuario}>
+                                        <form onSubmit={registrarUsuario}>
                                             <div className="form-item sign-up">
                                                 <div className="table">
                                                     <div className="table-cell">
-                                                        <input name="email" placeholder="Email" type="email" value={email} onChange={(e)=>setEmail(e.target.value)}/>
-                                                        <input name="fullName" placeholder="Nombre Completo" type="text"  value={name} onChange={(e)=>setName(e.target.value)}/>
-                                                        <input name="Username" placeholder="Usuario" type="text"  value={user} onChange={(e)=>setUser(e.target.value)}/>
-                                                        <input name="Password" placeholder="Contraseña" type="Password" value={pass} onChange={(e)=>setPass(e.target.value)}/>
+                                                        <input name="email" placeholder="Email" type="email" value={email} onChange={(e) => setEmail(e.target.value)} />
+                                                        <input name="fullName" placeholder="Nombre Completo" type="text" value={name} onChange={(e) => setName(e.target.value)} />
+                                                        <input name="Username" placeholder="Usuario" type="text" value={user} onChange={(e) => setUser(e.target.value)} />
+                                                        <input name="Password" placeholder="Contraseña" type="Password" value={pass} onChange={(e) => setPass(e.target.value)} />
                                                         <p>{mensajeRegistrar}</p>
-                                                        <button className="btn"  type="submit">
+                                                        <button className="btn" type="submit">
                                                             Registrarse
                                                         </button>
                                                     </div>
