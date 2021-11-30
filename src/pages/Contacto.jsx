@@ -74,7 +74,7 @@ function Contacto() {
                       style={{ color: "blue" }}
                     ></i>
                   </a>
-                  <p className="d-inline" style={{ color: "black" }}>
+                  <p className="d-inline" style={{ color: "white" }}>
                     {" "}
                     Facebook
                   </p>
@@ -85,7 +85,7 @@ function Contacto() {
                       style={{ color: "red" }}
                     ></i>
                   </a>
-                  <p className="d-inline" style={{ color: "black" }}>
+                  <p className="d-inline" style={{ color: "white" }}>
                     {" "}
                     Instagram
                   </p>
@@ -96,7 +96,7 @@ function Contacto() {
                       style={{ color: "rgb(102, 233, 102)" }}
                     ></i>
                   </a>
-                  <p className="d-inline" style={{ color: "black" }}>
+                  <p className="d-inline" style={{ color: "white" }}>
                     {" "}
                     Whatsapp
                   </p>
