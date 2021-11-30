@@ -6,53 +6,25 @@ function Contacto() {
     <Layout>
       <div className="container mx-auto">
         <section className="row d-flex">
-          <div className="col-10 col-lg-5 mx-auto">
-            <form action="server" method="POST">
-              <div className="contacto">
-                <h2 className="mt-3">Contáctanos</h2>
-                <div className="element mb-3">
-                  <div className="label">
-                    <label>Asunto</label>
-                  </div>
-                  <input
-                    type="text"
-                    id="asunto"
-                    name="asunto"
-                    placeholder="Escribe el asunto..."
-                    required
-                  />
+          <div class="grid">
+            <form action="/" method="post" class="form login">
+              <header class="login__header">
+                <h3 class="login__title">Contáctanos</h3>
+              </header>
+              <div class="login__body">
+                <div class="form__field">
+                  <input type="email" placeholder="Email" required></input>
                 </div>
-                <div className="element mb-3">
-                  <div className="label">
-                    <label>Correo</label>
-                  </div>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    placeholder="Escribe tu correo..."
-                    required
-                  />
+                <div class="form__field">
+                  <input type="email" placeholder="Asunto" required></input>
                 </div>
-                <div className="element mb-3">
-                  <div className="label">
-                    <label>Mensaje</label>
-                  </div>
-                  <textarea
-                    id="comment"
-                    name="comment"
-                    rows="2"
-                    placeholder="Escribe tu mensaje aquí..."
-                    required
-                  ></textarea>
+                <div class="form__field">
+                  <input type="email" placeholder="Mensaje" required></input>
                 </div>
-
-                <input
-                  className="btn btn-primary"
-                  type="submit"
-                  value="Enviar"
-                />
               </div>
+              <footer class="login__footer">
+                <input type="submit" value="Enviar"></input>
+              </footer>
             </form>
           </div>
 
@@ -63,7 +35,8 @@ function Contacto() {
                 <div className="info">
                   <h1>Visítanos</h1>
                   <p>
-                    CL 14D #43A-34 Manzanares I<br />
+                    CL 14D #43A-34 Manzanares,
+                    <br />
                     Poblado campestre, Candelaria
                     <br />
                     Cali, Colombia
