@@ -145,10 +145,11 @@
 .grid {
   width: 90%;
   width: var(--gridWidth);
-  margin-left: auto;
+  margin-left: var(--bodyLineHeight);
   margin-right: auto;
   max-width: 25em;
   max-width: var(--gridMaxWidth);
+  grid-template-columns: 50% 50%;
 }
 
 /* helpers/icon.css */
