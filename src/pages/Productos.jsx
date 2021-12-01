@@ -105,7 +105,7 @@ function Productos() {
                   type="button" href="todos" role="tab" aria-controls="otros" aria-selected="true">Otros</a>
               </li>
               <li className="nav-item fontsearch" style={{ marginLeft: "4%" }}>
-                {/* <i className="fas fa-search"></i> */}
+                <i className="fas fa-search"></i>
                 <input className="form-control me-2" type="search" placeholder="Buscar" aria-label="Search" value={buscarProducto} name="buscarProducto" onChange={event => setBuscar(event.target.value)} />
               </li>
               <li className="nav-item">
@@ -114,6 +114,7 @@ function Productos() {
               </li>
             </ul>
 
+            {/* MODAL COTIZACIÓN */}
             <div className="modal fade" tabIndex="-1" id="cotizar" aria-hidden="true" aria-labelledby="cotizacion">
               <div className="modal-dialog modal-dialog-centered">
                 <div className="modal-content text-dark">
@@ -178,13 +179,51 @@ function Productos() {
                 </div>
               </div>
             </div>
+
+            {/* MODAL PRODUCTO DESCRIPCIÓN */}
+            <div className="modal fade" tabIndex="-1" id="producto" aria-hidden="true" aria-labelledby="producto">
+              <div className="modal-dialog modal-dialog-centered">
+                <div className="modal-content text-dark">
+                  
+                  <div className="modal-body">
+                    <div className="closeinfo">
+                      <button type="button" className="btn-close pinfo" data-bs-dismiss="modal" aria-label="Close" style={{ backgroundColor: "white" }}>
+                      </button>
+                    </div>
+                    <section className="row">
+                        {productosData.filter(i => i.nombre.toLowerCase()).map((i, index) => (
+                        
+                        <div key={index} className="col-12 col-sm-6 col-md-4 col-lg-3 mt-5">
+
+                          <img src={i.url} className="card-img-top" alt="Imagen producto" id="imagenes-producto" />
+                          <div className="card-body border-top text-start">
+                            <h5 className="card-title color-marca">{i.nombre}</h5>
+                            <p className="card-text text-black review__item__text">
+                              {i.descripcion}
+                            </p>
+                            <h5 className="card-title text-black">{i.precio}</h5>
+                          </div>
+                      
+                        </div>
+                        ))}
+                    </section>
+                  </div>
+
+                  <div className="modal-footer">
+                    <button type="button" className="btn2">Guardar</button>
+                    <button type="button" className="btn btn-secondary " onClick={() => vaciarArray()}>Cancelar</button>
+                  </div>
+
+                </div>
+              </div>
+            </div>
           </section>
 
         </div>
 
         <div className="tab-content">
 
-          <div className="tab-pane fade show active" id="todos" role="tabpanel" aria-labelledby="todos-tab">
+          <div className="tab-pane fade show active" id="todos" role="tabpanel" aria-labelledby="todos-tab" data-bs-toggle="modal" data-bs-target="#producto" style={{ cursor: "pointer" }}>
             <section className="row">
               {productosData.filter(i => i.nombre.toLowerCase().match(buscarProducto.toLowerCase())).map((i, index) => (
                 <div key={index} className="col-12 col-sm-6 col-md-4 col-lg-3 mt-5">
@@ -209,7 +248,7 @@ function Productos() {
             </section>
           </div>
 
-          <div className="tab-pane fade" id="hogar" role="tabpanel" aria-labelledby="hogar-tab">
+          <div className="tab-pane fade" id="hogar" role="tabpanel" aria-labelledby="hogar-tab" data-bs-toggle="modal" data-bs-target="#producto" style={{ cursor: "pointer" }}>
             <section className="row">
               {productosData.filter(i => i.nombre.toLowerCase().match(buscarProducto.toLowerCase()) && i.categoria === "Hogar").map((i, index) => (
                 <div key={index} className="col-12 col-sm-6 col-md-4 col-lg-3 mt-5">
@@ -235,7 +274,7 @@ function Productos() {
             </section>
           </div>
 
-          <div className="tab-pane fade" id="electricos" role="tabpanel" aria-labelledby="electricos-tab">
+          <div className="tab-pane fade" id="electricos" role="tabpanel" aria-labelledby="electricos-tab" data-bs-toggle="modal" data-bs-target="#producto" style={{ cursor: "pointer" }}>
             <section className="row">
               {productosData.filter(i => i.nombre.toLowerCase().match(buscarProducto.toLowerCase()) && i.categoria === "Eléctricos").map((i, index) => (
                 <div key={index} className="col-12 col-sm-6 col-md-4 col-lg-3 mt-5">
@@ -258,7 +297,7 @@ function Productos() {
             </section>
           </div>
 
-          <div className="tab-pane fade" id="herramientas" role="tabpanel" aria-labelledby="herramientas-tab">
+          <div className="tab-pane fade" id="herramientas" role="tabpanel" aria-labelledby="herramientas-tab" data-bs-toggle="modal" data-bs-target="#producto" style={{ cursor: "pointer" }}>
             <section className="row">
               {productosData.filter(i => i.nombre.toLowerCase().match(buscarProducto.toLowerCase()) && i.categoria === "Herramientas").map((i, index) => (
                 <div key={index} className="col-12 col-sm-6 col-md-4 col-lg-3 mt-5">
@@ -281,7 +320,7 @@ function Productos() {
             </section>
           </div>
 
-          <div className="tab-pane fade" id="tuberias" role="tabpanel" aria-labelledby="tuberias-tab">
+          <div className="tab-pane fade" id="tuberias" role="tabpanel" aria-labelledby="tuberias-tab" data-bs-toggle="modal" data-bs-target="#producto" style={{ cursor: "pointer" }}>
             <section className="row">
               {productosData.filter(i => i.nombre.toLowerCase().match(buscarProducto.toLowerCase()) && i.categoria === "Tuberia").map((i, index) => (
                 <div key={index} className="col-12 col-sm-6 col-md-4 col-lg-3 mt-5">
@@ -304,7 +343,7 @@ function Productos() {
             </section>
           </div>
 
-          <div className="tab-pane fade" id="otros" role="tabpanel" aria-labelledby="otros-tab">
+          <div className="tab-pane fade" id="otros" role="tabpanel" aria-labelledby="otros-tab" data-bs-toggle="modal" data-bs-target="#producto" style={{ cursor: "pointer" }}>
             <section className="row">
               {productosData.filter(i => i.nombre.toLowerCase().match(buscarProducto.toLowerCase()) && i.categoria === "Otros").map((i, index) => (
                 <div key={index} className="col-12 col-sm-6 col-md-4 col-lg-3 mt-5">
