@@ -22,17 +22,17 @@ function Nosotros() {
                             <div className="modal-dialog modal-dialog-centered">
                                 <div className="modal-content text-white" style={{ backgroundImage: `url(${modalbg})`}}>
                                     <div className="modal-body">
-                                        <button type="button" className="close btn-close" data-bs-dismiss="modal" aria-label="Close" style= {{backgroundColor: "white"}}>
-                                        </button>
-                                        <p className="lead-about">
-                                        Somos una empresa dedicada a la distribución de productos eléctricos y de ferretería a diferentes municipios 
-                                        del Valle del Cauca, brindando un servicio innovador y eficiente. 
-                                        <br/>Generamos progreso y estabilidad en nuestros 
-                                        colaboradores, ya que ellos hacen posible la existencia de nuestra empresa.
-                                        </p>
-                                        <p className="lead-about">
-                                        Nuestra compañía inicia un proceso comercial en la ciudad de Candelaria, donde se vio un gran potencial de expansión gracias los nuevos proyectos de vivienda; por consiguiente, buscamos ser los mejores aliados de los residentes y ser partícipes en hacer cumplir sus sueños, ofreciendo una gran variedad de productos para la remodelación de sus hogares.
-                                        </p> 
+                                        <div className="card card-modal">
+                                            <p className="lead-about">
+                                            Somos una empresa dedicada a la distribución de productos eléctricos y de ferretería a diferentes municipios 
+                                            del Valle del Cauca, brindando un servicio innovador y eficiente. 
+                                            <br/>Generamos progreso y estabilidad en nuestros 
+                                            colaboradores, ya que ellos hacen posible la existencia de nuestra empresa.
+                                            </p>
+                                            <p className="lead-about">
+                                            Nuestra compañía inicia un proceso comercial en la ciudad de Candelaria, donde se vio un gran potencial de expansión gracias los nuevos proyectos de vivienda; por consiguiente, buscamos ser los mejores aliados de los residentes y ser partícipes en hacer cumplir sus sueños, ofreciendo una gran variedad de productos para la remodelación de sus hogares.
+                                            </p> 
+                                        </div>
                                     </div>
                                 </div>
                             </div>

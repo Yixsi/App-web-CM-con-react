@@ -96,10 +96,7 @@
     font-style: italic;
     font-weight: 540;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    color:rgb(97, 53, 12);
-  }
-  .modal-body .lead-about{
-    margin-top: 25px;
+    color:rgb(0, 0, 0);
   }
   .close {
     float: right;
@@ -122,4 +119,7 @@
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
+}
+.card-modal{
+  padding: 10px;
 }

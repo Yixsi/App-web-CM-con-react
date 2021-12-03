@@ -71,7 +71,7 @@ function Header() {
                                                     <Link to="/" className="dropdown-item menuperfil cerrar" onClick= {(() => cerrarSesion())} ><i className="fas fa-sign-out-alt m-1"></i> Cerrar sesion</Link>
                                                 </div>
                                             </div>
-                                        : <Link to="/login" className="px-3 text-light perfil" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i className="far fa-user-circle"></i></Link>
+                                        : <Link to="/login" className="px-3 text-light perfil" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i className="far fa-user-circle hvr-icon-sink"></i></Link>
                                     }
                                 </li>
                             </ul>
