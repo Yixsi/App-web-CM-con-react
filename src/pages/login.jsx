@@ -58,7 +58,7 @@ function Login() {
 
             <div className="container mx-auto" >
                 <section className="row d-flex">
-                    <div className="col-10 col-lg-7 mx-auto">
+                    <div className="col-10 col-lg-9 mx-auto">
                         <div className="contenedor">
                             <div className={`container1${on ? " log-in" : ""}`}>
                                 <div className="box"></div>
