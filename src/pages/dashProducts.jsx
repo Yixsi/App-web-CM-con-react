@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios"
 import Footer from "components/Footer"
 import Header from "components/HeaderDashboard"
-import BarraLateral from "components/dashboardBarraLateral"
+import BarraLateral from "components/DashboardBarraLateral"
 
 function Dashboard() {
 

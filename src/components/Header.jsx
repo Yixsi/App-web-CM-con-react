@@ -69,7 +69,7 @@ function Header() {
                                                 <a  href="/#" className="px-3 text-light perfil dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i className="far fa-user-circle"></i></a>
 
                                                 <div className="dropdown-menu" aria-labelledby="navbar-dropdown">
-                                                    <Link style = { rolIniciarSeccion > 1 ? {} :{display: 'none'}} to="/dashboard" className="dropdown-item menuperfil cerrar"><i className="fas fa-exchange-alt"></i> Dashboard</Link>
+                                                    <Link style = { rolIniciarSeccion > 1 ? {} :{display: 'none'}} to="/dashboard-products" className="dropdown-item menuperfil cerrar"><i className="fas fa-exchange-alt"></i> Dashboard</Link>
                                                     <Link to="" className="dropdown-item menuperfil cerrar"><i className="fas fa-exchange-alt"></i>  Cambiar contraseña</Link>
                                                     <button to="/" className="dropdown-item menuperfil cerrar" onClick= {(() => cerrarSesion())} ><i className="fas fa-sign-out-alt m-1"></i> Cerrar sesion</button>
                                                 </div>
