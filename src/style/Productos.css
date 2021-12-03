@@ -79,4 +79,10 @@ button{
 }
 .closeinfo{
     margin-left: 96%;
+    float: right;
+}
+.product{
+    float: right;
+    width: 50%;
+    height: 95%;
 }

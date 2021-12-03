@@ -191,26 +191,24 @@ function Productos() {
                       </button>
                     </div>
                     <section className="row">
-                        {productosData.filter(i => i.nombre.toLowerCase()).map((i, index) => (
-                        
-                        <div key={index} className="col-12 col-sm-6 col-md-4 col-lg-3 mt-5">
-
-                          <img src={i.url} className="card-img-top" alt="Imagen producto" id="imagenes-producto" />
+                        <div class="image col-12 col-md-6 col-lg-6"><img src></img></div>
+                        <div className="card m-auto col-12 col-md-6 col-lg-6 ">
                           <div className="card-body border-top text-start">
-                            <h5 className="card-title color-marca">{i.nombre}</h5>
+                            <h5 className="card-title color-marca" style={{ fontWeight: "bold"}}>Nombre</h5>
                             <p className="card-text text-black review__item__text">
-                              {i.descripcion}
+                              descripcion
                             </p>
-                            <h5 className="card-title text-black">{i.precio}</h5>
+                            <h5 className="card-title text-black">precio</h5>
+                            <button><i className="fas fa-minus hvr-push" style={{ paddingRight: "12px" }}></i></button>
+                              Cant
+                              <button><i className="fas fa-plus hvr-push" style={{ paddingLeft: "12px" }}></i></button>
                           </div>
-                      
                         </div>
-                        ))}
                     </section>
                   </div>
 
                   <div className="modal-footer">
-                    <button type="button" className="btn2">Guardar</button>
+                    <button type="button" className="btn2">Agregar a cotización</button>
                     <button type="button" className="btn btn-secondary " onClick={() => vaciarArray()}>Cancelar</button>
                   </div>
 
@@ -227,7 +225,7 @@ function Productos() {
             <section className="row">
               {productosData.filter(i => i.nombre.toLowerCase().match(buscarProducto.toLowerCase())).map((i, index) => (
                 <div key={index} className="col-12 col-sm-6 col-md-4 col-lg-3 mt-5">
-                  <div className="card m-auto shadow" style={{ width: "200px" }}>
+                  <div className="card m-auto shadow" style={{ width: "230px" }}>
 
                     {i[index] !== carritoCompras.find(e => e.nombre === i.nombre)
                       ? <button type="button" className="tags" gloss="Eliminar cotización" onClick={() => eliminarProducto(i.codigo)} ><i className="fas fa-minus-square hvr-bounce-in" style={{ color: "green" }} id="plus"></i></button>
@@ -237,10 +235,8 @@ function Productos() {
                     <img src={i.url} className="card-img-top" alt="Imagen producto" id="imagenes-producto" />
                     <div className="card-body border-top text-start">
                       <h5 className="card-title color-marca">{i.nombre}</h5>
-                      <p className="card-text text-black review__item__text">
-                        {i.descripcion}
-                      </p>
                       <h5 className="card-title text-black">{i.precio}</h5>
+                      
                     </div>
                   </div>
                 </div>
@@ -252,7 +248,7 @@ function Productos() {
             <section className="row">
               {productosData.filter(i => i.nombre.toLowerCase().match(buscarProducto.toLowerCase()) && i.categoria === "Hogar").map((i, index) => (
                 <div key={index} className="col-12 col-sm-6 col-md-4 col-lg-3 mt-5">
-                  <div className="card m-auto shadow" style={{ width: "200px" }}>
+                  <div className="card m-auto shadow" style={{ width: "230px" }}>
 
                     {i[index] !== carritoCompras.find(e => e.nombre === i.nombre)
                       ? <button type="button" className="tags" gloss="Eliminar cotización" onClick={() => eliminarProducto(i.codigo)} ><i className="fas fa-minus-square hvr-bounce-in" style={{ color: "green" }} id="plus"></i></button>
@@ -263,9 +259,6 @@ function Productos() {
                     <img src={i.url} className="card-img-top" alt="Imagen producto" id="imagenes-producto" />
                     <div className="card-body border-top text-start">
                       <h5 className="card-title color-marca">{i.nombre}</h5>
-                      <p className="card-text text-black review__item__text">
-                        {i.descripcion}
-                      </p>
                       <h5 className="card-title text-black">{i.precio}</h5>
                     </div>
                   </div>
@@ -278,7 +271,7 @@ function Productos() {
             <section className="row">
               {productosData.filter(i => i.nombre.toLowerCase().match(buscarProducto.toLowerCase()) && i.categoria === "Eléctricos").map((i, index) => (
                 <div key={index} className="col-12 col-sm-6 col-md-4 col-lg-3 mt-5">
-                  <div className="card m-auto shadow" style={{ width: "200px" }}>
+                  <div className="card m-auto shadow" style={{ width: "230px" }}>
                     {i[index] !== carritoCompras.find(e => e.nombre === i.nombre)
                       ? <button type="button" className="tags" gloss="Eliminar cotización" onClick={() => eliminarProducto(i.codigo)} ><i className="fas fa-minus-square hvr-bounce-in" style={{ color: "green" }} id="plus"></i></button>
                       : <button type="button" className="tags" gloss="Añadir a cotización" onClick={() => agregarCotizacion(i.codigo)}><i className="fas fa-plus-square hvr-bounce-in" id="plus"></i></button>
@@ -286,9 +279,6 @@ function Productos() {
                     <img src={i.url} className="card-img-top" alt="Imagen producto" id="imagenes-producto" />
                     <div className="card-body border-top text-start">
                       <h5 className="card-title color-marca">{i.nombre}</h5>
-                      <p className="card-text text-black review__item__text">
-                        {i.descripcion}
-                      </p>
                       <h5 className="card-title text-black">{i.precio}</h5>
                     </div>
                   </div>
@@ -301,7 +291,7 @@ function Productos() {
             <section className="row">
               {productosData.filter(i => i.nombre.toLowerCase().match(buscarProducto.toLowerCase()) && i.categoria === "Herramientas").map((i, index) => (
                 <div key={index} className="col-12 col-sm-6 col-md-4 col-lg-3 mt-5">
-                  <div className="card m-auto shadow" style={{ width: "200px" }}>
+                  <div className="card m-auto shadow" style={{ width: "230px" }}>
                     {i[index] !== carritoCompras.find(e => e.nombre === i.nombre)
                       ? <button type="button" className="tags" gloss="Eliminar cotización" onClick={() => eliminarProducto(i.codigo)} ><i className="fas fa-minus-square hvr-bounce-in" style={{ color: "green" }} id="plus"></i></button>
                       : <button type="button" className="tags" gloss="Añadir a cotización" onClick={() => agregarCotizacion(i.codigo)}><i className="fas fa-plus-square hvr-bounce-in" id="plus"></i></button>
@@ -309,9 +299,6 @@ function Productos() {
                     <img src={i.url} className="card-img-top" alt="Imagen producto" id="imagenes-producto" />
                     <div className="card-body border-top text-start">
                       <h5 className="card-title color-marca">{i.nombre}</h5>
-                      <p className="card-text text-black review__item__text">
-                        {i.descripcion}
-                      </p>
                       <h5 className="card-title text-black">{i.precio}</h5>
                     </div>
                   </div>
@@ -324,7 +311,7 @@ function Productos() {
             <section className="row">
               {productosData.filter(i => i.nombre.toLowerCase().match(buscarProducto.toLowerCase()) && i.categoria === "Tuberia").map((i, index) => (
                 <div key={index} className="col-12 col-sm-6 col-md-4 col-lg-3 mt-5">
-                  <div className="card m-auto shadow" style={{ width: "200px" }}>
+                  <div className="card m-auto shadow" style={{ width: "230px" }}>
                     {i[index] !== carritoCompras.find(e => e.nombre === i.nombre)
                       ? <button type="button" className="tags" gloss="Eliminar cotización" onClick={() => eliminarProducto(i.codigo)} ><i className="fas fa-minus-square hvr-bounce-in" style={{ color: "green" }} id="plus"></i></button>
                       : <button type="button" className="tags" gloss="Añadir a cotización" onClick={() => agregarCotizacion(i.codigo)}><i className="fas fa-plus-square hvr-bounce-in" id="plus"></i></button>
@@ -332,9 +319,6 @@ function Productos() {
                     <img src={i.url} className="card-img-top" alt="Imagen producto" id="imagenes-producto" />
                     <div className="card-body border-top text-start">
                       <h5 className="card-title color-marca">{i.nombre}</h5>
-                      <p className="card-text text-black review__item__text">
-                        {i.descripcion}
-                      </p>
                       <h5 className="card-title text-black">{i.precio}</h5>
                     </div>
                   </div>
@@ -347,7 +331,7 @@ function Productos() {
             <section className="row">
               {productosData.filter(i => i.nombre.toLowerCase().match(buscarProducto.toLowerCase()) && i.categoria === "Otros").map((i, index) => (
                 <div key={index} className="col-12 col-sm-6 col-md-4 col-lg-3 mt-5">
-                  <div className="card m-auto shadow" style={{ width: "200px" }}>
+                  <div className="card m-auto shadow" style={{ width: "230px" }}>
                     {i[index] !== carritoCompras.find(e => e.nombre === i.nombre)
                       ? <button type="button" className="tags" gloss="Eliminar cotización" onClick={() => eliminarProducto(i.codigo)} ><i className="fas fa-minus-square hvr-bounce-in" style={{ color: "green" }} id="plus"></i></button>
                       : <button type="button" className="tags" gloss="Añadir a cotización" onClick={() => agregarCotizacion(i.codigo)}><i className="fas fa-plus-square hvr-bounce-in" id="plus"></i></button>
@@ -355,9 +339,6 @@ function Productos() {
                     <img src={i.url} className="card-img-top" alt="Imagen producto" id="imagenes-producto" />
                     <div className="card-body border-top text-start">
                       <h5 className="card-title color-marca">{i.nombre}</h5>
-                      <p className="card-text text-black review__item__text">
-                        {i.descripcion}
-                      </p>
                       <h5 className="card-title text-black">{i.precio}</h5>
                     </div>
                   </div>
