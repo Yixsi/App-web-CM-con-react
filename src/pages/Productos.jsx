@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState,useEffect  } from "react";
 import Layout from "layouts/Layout";
 import axios from "axios"
 import "style/Productos.css";
@@ -9,8 +9,8 @@ function Productos() {
   
   const [productosData,setProductosData] = useState([])
   
-  React.useEffect(() => {
-    axios.get("/listar-articulos")
+  useEffect(() => {
+    axios.get("/api/listar-articulos")
     .then((response) =>{
       setProductosData(response.data)
     })
@@ -272,7 +272,7 @@ function Productos() {
 
           <div className="tab-pane fade" id="electricos" role="tabpanel" aria-labelledby="electricos-tab" data-bs-toggle="modal" data-bs-target="#producto" style={{ cursor: "pointer" }}>
             <section className="row">
-              {productosData.filter(i => i.nombre.toLowerCase().match(buscarProducto.toLowerCase()) && i.categoria === "Eléctricos").map((i, index) => (
+              {productosData.filter(i => i.nombre.toLowerCase().match(buscarProducto.toLowerCase()) && i.categoria === "Electricos").map((i, index) => (
                 <div key={index} className="col-12 col-sm-6 col-md-4 col-lg-3 mt-5">
                   <div className="card m-auto shadow" style={{ width: "230px" }}>
                     {i[index] !== carritoCompras.find(e => e.nombre === i.nombre)

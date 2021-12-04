@@ -3,7 +3,7 @@ import bcrypt from "bcryptjs"
 import jwt from "jsonwebtoken"
 
 const usuarioCtrl = {}
-const maxAge = 60
+const maxAge = 60 * 60
 
 function createToken(id){
     return jwt.sign({id},process.env.JWT_SECRET,{expiresIn:maxAge})
@@ -38,11 +38,20 @@ usuarioCtrl.crear = async(req,res)=>{
         const token = createToken(user._id)
         res.cookie("jwt",token,{httpOnly:true,maxAge: maxAge*10000});
         res.json({
-            mensaje: 'Bienvenido',
-            unlock: 1,
+            mensaje: 0,
             id: NuevoUsuario._id,
             user: NuevoUsuario.user,
         }) 
+    }
+}
+
+usuarioCtrl.verificarUser = async(req,res) =>{
+
+    if(res.locals.user.id){
+        const user = await Usuario.findOne({_id:res.locals.user.id})
+        res.send(user)
+    }else{
+        res.send("No ha iniciado sesion")
     }
 }
 
@@ -56,8 +65,8 @@ usuarioCtrl.login = async(req,res)=>{
     }
     const match = await bcrypt.compare(pass,user.pass)
     if(match){
-        const token = createToken(user._id)
-        res.cookie("jwt",token,{httpOnly:true,maxAge: maxAge*100});
+        const token = createToken(user._id,user.role)
+        res.cookie("jwt",token,{httpOnly:true,maxAge: maxAge*10000});
         res.json({
             mensaje: 1,
             id: user._id,
@@ -73,7 +82,8 @@ usuarioCtrl.login = async(req,res)=>{
 }
 
 usuarioCtrl.cerrarSesion = async(req,res)=>{
-    res.cookie("jwt","",1);
+    res.cookie("jwt","",{ maxAge : 1});
+    res.send("Okey")
 }
 
 module.exports = usuarioCtrl
