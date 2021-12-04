@@ -86,3 +86,7 @@ button{
     width: 50%;
     height: 95%;
 }
+.stock{
+    padding-left: 15px;
+    display: inline;
+}

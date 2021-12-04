@@ -191,7 +191,9 @@ function Productos() {
                       </button>
                     </div>
                     <section className="row">
-                        <div class="image col-12 col-md-6 col-lg-6"><img src></img></div>
+                        <div class="image col-12 col-md-6 col-lg-6">
+                          <img src></img>
+                        </div>
                         <div className="card m-auto col-12 col-md-6 col-lg-6 ">
                           <div className="card-body border-top text-start">
                             <h5 className="card-title color-marca" style={{ fontWeight: "bold"}}>Nombre</h5>
@@ -201,7 +203,8 @@ function Productos() {
                             <h5 className="card-title text-black">precio</h5>
                             <button><i className="fas fa-minus hvr-push" style={{ paddingRight: "12px" }}></i></button>
                               Cant
-                              <button><i className="fas fa-plus hvr-push" style={{ paddingLeft: "12px" }}></i></button>
+                            <button><i className="fas fa-plus hvr-push" style={{ paddingLeft: "12px" }}></i></button>
+                            <p className="stock">En stock:</p>
                           </div>
                         </div>
                     </section>
