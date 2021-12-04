@@ -6,7 +6,7 @@ import modalbg from "media/6882.jpg"
 function Nosotros() {
     return(
         <Layout>
-            <div className="container mx-auto mt-5 mb-5">
+            <div className="container mx-auto mt-5 ">
 
                 <section className="tarjeta row mb-5 .bg-dark col-lg-4 col-md-6 col-sm-12">
                     <div className="wrapper mx-auto">
@@ -38,7 +38,7 @@ function Nosotros() {
                             </div>
                         </div>
                 </section>
-                <section className="tarjeta row mb-5 .bg-dark col-lg-4 col-md-6 col-sm-12">
+                <section className="tarjeta row .bg-dark col-lg-4 col-md-6 col-sm-12">
                     <div className="wrapper mx-auto">
                         <div className="card"><img  alt ="" src="https://img.freepik.com/foto-gratis/pareja-joven-haciendo-reparacion-apartamentos-juntos-ellos-mismos-hombre-mujer-casados-haciendo-remodelacion-o-renovacion-casa-concepto-relaciones-familia-amor-midiendo-pared-preparandose-diseno_155003-19797.jpg?size=626&ext=jpg"/>
                             <div className="info">
@@ -48,7 +48,7 @@ function Nosotros() {
                         </div>
                     </div>
                 </section>
-                <section className="tarjeta row mb-5 .bg-dark col-lg-4 col-md-6 col-sm-12">
+                <section className="tarjeta row .bg-dark col-lg-4 col-md-6 col-sm-12">
                     <div className="wrapper mx-auto">
                         <div className="card"><img alt = "" src="https://img.freepik.com/foto-gratis/constructor-masculino-probandose-casco-estante-ferreteria-constructor-uniforme-mirar-productos-tienda-bricolaje_266732-20737.jpg?size=626&ext=jpg"/>
                             <div className="info">

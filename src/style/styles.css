@@ -116,31 +116,6 @@ h2{
 }
 
 
-/*Formulario contacto*/
-.contacto{
-  text-align: center;
-  margin-bottom: 30px;
-}
-
-.contacto .element textarea{
-  width: 100%;
-  padding: 10px;
-  border-radius: 5px;
-  border: 0.5px #cdc solid;
-}
-
-#info{
-  color: black;
-}
-
-#info h2{
-  margin-bottom: 10px;
-  padding: 0;
-  font-size: 30px;
-  color: #f6821f;
-  text-align: center;
-}
-
 /* Dashboard */
 .image {
   width: 179px;
