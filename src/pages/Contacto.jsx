@@ -6,11 +6,26 @@ function Contacto(){
         <Layout>
             <div className="container mx-auto">
                 <section className="row d-flex">
+                
+                    {/* <section className="tarjeta row mb-5 .bg-dark col-lg-4 col-md-6 col-sm-12">
+                        <br />
+                        <div className="wrapper mx-auto">
+                            <div className="card " style={{ width: "400px" }} >
+                                <img  alt="" src="https://trabajosyempleosargentina.com.ar/wp-content/uploads/2020/11/vendedor-administrativo.jpg"/>
+                                <div className="info">
+                                <h1>Visítanos</h1>
+                                <p>CL 14D #43A-34 Manzanares I<br/>Poblado campestre, Candelaria<br/>Cali, Colombia</p>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </section>
 
                     <div className="col-10 col-lg-5 mx-auto">
 
                         <form action="server" method="POST">
                             <div className="contacto">
+                                <br />
                                 <h2 className="mt-3">Contáctanos</h2>
                                 <div className="element mb-3">
                                     <div className="label"><label>Asunto</label></div>
@@ -31,18 +46,7 @@ function Contacto(){
 
                     </div>
 
-                    <section className="tarjeta row mb-5 .bg-dark col-lg-4 col-md-6 col-sm-12">
-                    <div className="wrapper mx-auto">
-                        <div className="card">
-                            <img alt="" src="https://image.freepik.com/foto-gratis/vendedor-cuenta-sobre-producto_85574-8279.jpg"/>
-                            <div className="info">
-                            <h1>Visítanos</h1>
-                            <p>CL 14D #43A-34 Manzanares I<br/>Poblado campestre, Candelaria<br/>Cali, Colombia</p>
-                            </div>
-                        </div>
-                        
-                    </div>
-                    </section>
+                   
 
                     <div className="col-12 col-lg-6 mx-auto">
                         <aside id="info">
@@ -57,7 +61,7 @@ function Contacto(){
                             </article>
                         </aside>
                     </div>
-
+ */}
                 </section>
             </div>
         </Layout>
