@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Yantramanav:100,300');
 
+
 /* ------------- */
 /* GLOBAL STYLES */
 /* ------------- */
@@ -36,7 +37,12 @@ ul {
 }
 
 .brand span {
-  color: #ffffff;
+  color: #6e6c6a;
+  font-size: larger;
+  font-family: Arial, Helvetica, serif;
+  padding: 20px;
+  font-weight: 780;
+  text-transform: capitalize;
 }
 
 /* .wrapper {
@@ -52,7 +58,7 @@ ul {
 /* ------------------- */
 
 .company-info {
-  background: #C3C9DD;
+  background: #5b5a59;
   border-top-left-radius: 4px;
   border-top-right-radius: 4px;
 }
@@ -68,7 +74,7 @@ ul {
 /* ------- */
 
 .contact {
-  background: #dcdfea;
+  background: #070707b4;
   border-bottom-left-radius: 4px;
   border-bottom-right-radius: 4px;
 }
@@ -100,7 +106,7 @@ ul {
 .contact form textarea {
   width: 100%;
   padding: 1em;
-  border: solid 1px #627EDC;
+  border: solid 1px #01040f;
   border-radius: 4px;
 }
 
@@ -109,7 +115,7 @@ ul {
 }
 
 .contact form button {
-  background: #627EDC;
+  background: #ca6405;
   border: 0;
   color: #e4e4e4;
   text-transform: uppercase;
