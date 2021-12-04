@@ -3,6 +3,7 @@ import morgan from'morgan';
 import cors from 'cors';
 import path from 'path';
 import cookieParser from "cookie-parser"
+import {requireAuth} from "./middleware/authMiddleware"
 require("dotenv").config();
 
 const corsOptions = {
@@ -38,6 +39,7 @@ app.use(express.static(path.join(__dirname,'public')))
 
 
 //RUTAS
+app.use('/auth',requireAuth, require('./routes/AuthRouter')); 
 app.use('/api', require('./routes/rutas'));
 //-------------------------------------
 
