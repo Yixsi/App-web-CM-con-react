@@ -1,4 +1,4 @@
-import React, { useState,useEffect  } from "react";
+import React, { useState, useEffect } from "react";
 import Layout from "layouts/Layout";
 import axios from "axios"
 import "style/Productos.css";
@@ -6,27 +6,26 @@ import "style/Productos.css";
 
 
 function Productos() {
-  
-  const [productosData,setProductosData] = useState([])
-  
+
+  const [productosData, setProductosData] = useState([])
+
   useEffect(() => {
     axios.get("/api/listar-articulos")
-    .then((response) =>{
-      setProductosData(response.data)
-    })
-  },[]) 
+      .then((response) => {
+        setProductosData(response.data)
+      })
+  }, [])
 
   const [carritoCompras, setCarrito] = useState([])
   const [buscarProducto, setBuscar] = useState('')
-  const[productosModal, setModal] = useState({})
-  const[num , setNum] = useState(1) 
+  const [productosModal, setModal] = useState({})
+  const [num, setNum] = useState(1)
 
-  function agregarCotizacion(codigo) {
-    const agregarCarrito = productosData.find(id => id.codigo === codigo);
-    agregarCarrito.carritoCantidad = num;
+  function agregarCotizacion(producto) {
+    producto.carritoCantidad = num;
     setCarrito([
       ...carritoCompras,
-      agregarCarrito
+      producto
     ])
   }
 
@@ -72,7 +71,6 @@ function Productos() {
   function vaciarArray() {
     const borrar = carritoCompras.splice()
     setCarrito(borrar)
-    console.log(borrar)
   }
 
   return (
@@ -186,36 +184,36 @@ function Productos() {
             <div className="modal  fade modal-producto" tabIndex="-1" id="producto" aria-hidden="true" aria-labelledby="producto">
               <div className="modal-dialog modal-lg modal-dialog-centered">
                 <div className="modal-content text-dark">
-                <div className="modal-header">
+                  <div className="modal-header">
                     <h5 className="modal-title" id="detail">Detalle del producto</h5>
                     <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close" style={{ backgroundColor: "white" }}>
                     </button>
                   </div>
                   <div className="modal-body">
                     <section className="row">
-                        <div className="image col-12 col-md-6 col-lg-6 mx-auto mt-3">
-                          <img className="ImagenModal" alt= "ImagenModal" src = {productosModal.url} style = {{heigh: "300px", width: "250px"}}/>
+                      <div className="image col-12 col-md-6 col-lg-6 mx-auto mt-3">
+                        <img className="ImagenModal" alt="ImagenModal" src={productosModal.url} style={{ heigh: "300px", width: "250px" }} />
+                      </div>
+                      <div className="card cardproducto col-12 col-md-5 col-lg-5 mx-auto">
+                        <div className="card-body border-top text-start">
+                          <h5 className="card-title color-marca" style={{ fontWeight: "bold" }}>{productosModal.nombre}</h5>
+                          <p className="card-text text-black ">
+                            {productosModal.descripcion}
+                          </p>
+                          <h5 className="card-title text-black">{productosModal.precio}</h5>
+                          <button disabled={num === 1} onClick={() => setNum(num - 1)}><i className="fas fa-minus hvr-push" style={{ paddingRight: "12px" }}></i></button>
+                          {num}
+                          <button disabled={num >= productosModal.cantidad} onClick={() => setNum(num + 1)}><i className="fas fa-plus hvr-push" style={{ paddingLeft: "12px", paddingRight: "20px" }}></i></button>
+                          <p className="stock">En stock:{"  " + productosModal.cantidad}</p>
                         </div>
-                        <div className="card cardproducto col-12 col-md-5 col-lg-5 mx-auto">
-                          <div className="card-body border-top text-start">
-                            <h5 className="card-title color-marca" style={{ fontWeight: "bold"}}>{productosModal.nombre}</h5>
-                            <p className="card-text text-black ">
-                              {productosModal.descripcion}
-                            </p>
-                            <h5 className="card-title text-black">{productosModal.precio}</h5>
-                            <button disabled = {num === 1}  disable onClick = {()=> setNum(num-1)}><i className="fas fa-minus hvr-push" style={{ paddingRight: "12px" }}></i></button>
-                              {num}
-                            <button disabled = {num >= productosModal.cantidad} onClick = {()=> setNum(num+1)}><i className="fas fa-plus hvr-push" style={{ paddingLeft: "12px", paddingRight: "20px" }}></i></button>
-                            <p className="stock">En stock:{"  "+productosModal.cantidad}</p>
-                          </div>
-                        </div>
+                      </div>
                     </section>
                   </div>
 
                   <div className="modal-footer">
                     {productosModal !== carritoCompras.find(e => e.nombre === productosModal.nombre)
-                    ?<button type="button" className="btn2" onClick = {() => agregarCotizacion(productosModal.codigo)}>Agregar a cotización</button> 
-                    :<button type="button" className="btn3" disabled = {true} onClick = {()=>console.log("Hola")}>Agregado</button>}
+                      ? <button type="button" className="btn2" onClick={() => agregarCotizacion(productosModal)}>Agregar a cotización</button>
+                      : <button type="button" className="btn3" disabled={true} onClick={() => console.log("Hola")}>Agregado</button>}
 
                     <button type="button" className="btn btn-secondary " onClick={() => eliminarProducto(productosModal.codigo)}>Cancelar</button>
                   </div>
@@ -237,14 +235,14 @@ function Productos() {
 
                     {i[index] !== carritoCompras.find(e => e.nombre === i.nombre)
                       ? <button type="button" className="tags" gloss="Eliminar cotización" onClick={() => eliminarProducto(i.codigo)} ><i className="fas fa-minus-square hvr-bounce-in" style={{ color: "green" }} id="plus"></i></button>
-                      : <button type="button" className="tags" gloss="Añadir a cotización" onClick={() => agregarCotizacion(i.codigo)}><i className="fas fa-plus-square hvr-bounce-in" id="plus"></i></button>
+                      : <button type="button" className="tags" gloss="Añadir a cotización" onClick={() => agregarCotizacion(i)}><i className="fas fa-plus-square hvr-bounce-in" id="plus"></i></button>
                     }
 
-                    <img src={i.url} className="card-img-top" onClick ={ ()=> {setNum(1);setModal(productosData[index])} } alt="Imagen producto" id="imagenes-producto" data-bs-toggle="modal" data-bs-target="#producto" style={{ cursor: "pointer" }} />
-                    <div className="card-body border-top text-start" onClick ={ ()=>{setNum(1);setModal(productosData[index])}  } data-bs-toggle="modal" data-bs-target="#producto" style={{ cursor: "pointer" }}>
+                     <img src={i.url} className="card-img-top" onClick={() => { setNum(1); setModal(i) }} alt="Imagen producto" id="imagenes-producto" data-bs-toggle="modal" data-bs-target="#producto" style={{ cursor: "pointer" }} />
+                    <div className="card-body border-top text-start" onClick={() => { setNum(1); setModal(i) }} data-bs-toggle="modal" data-bs-target="#producto" style={{ cursor: "pointer" }}>
                       <h5 className="card-title color-marca">{i.nombre}</h5>
                       <h5 className="card-title text-black">{i.precio}</h5>
-                      
+
                     </div>
                   </div>
                 </div>
@@ -260,12 +258,12 @@ function Productos() {
 
                     {i[index] !== carritoCompras.find(e => e.nombre === i.nombre)
                       ? <button type="button" className="tags" gloss="Eliminar cotización" onClick={() => eliminarProducto(i.codigo)} ><i className="fas fa-minus-square hvr-bounce-in" style={{ color: "green" }} id="plus"></i></button>
-                      : <button type="button" className="tags" gloss="Añadir a cotización" onClick={() => agregarCotizacion(i.codigo)}><i className="fas fa-plus-square hvr-bounce-in" id="plus"></i></button>
+                      : <button type="button" className="tags" gloss="Añadir a cotización" onClick={() => agregarCotizacion(i)}><i className="fas fa-plus-square hvr-bounce-in" id="plus"></i></button>
                     }
 
 
-                   <img src={i.url} className="card-img-top" onClick ={ ()=> {setNum(1);setModal(productosData[index])} } alt="Imagen producto" id="imagenes-producto" data-bs-toggle="modal" data-bs-target="#producto" style={{ cursor: "pointer" }} />
-                    <div className="card-body border-top text-start" onClick ={ ()=>{setNum(1);setModal(productosData[index])}  } data-bs-toggle="modal" data-bs-target="#producto" style={{ cursor: "pointer" }}>
+                    <img src={i.url} className="card-img-top" onClick={() => { setNum(1); setModal(i) }} alt="Imagen producto" id="imagenes-producto" data-bs-toggle="modal" data-bs-target="#producto" style={{ cursor: "pointer" }} />
+                    <div className="card-body border-top text-start" onClick={() => { setNum(1); setModal(i) }} data-bs-toggle="modal" data-bs-target="#producto" style={{ cursor: "pointer" }}>
                       <h5 className="card-title color-marca">{i.nombre}</h5>
                       <h5 className="card-title text-black">{i.precio}</h5>
                     </div>
@@ -282,10 +280,10 @@ function Productos() {
                   <div className="card m-auto shadow" style={{ width: "230px" }}>
                     {i[index] !== carritoCompras.find(e => e.nombre === i.nombre)
                       ? <button type="button" className="tags" gloss="Eliminar cotización" onClick={() => eliminarProducto(i.codigo)} ><i className="fas fa-minus-square hvr-bounce-in" style={{ color: "green" }} id="plus"></i></button>
-                      : <button type="button" className="tags" gloss="Añadir a cotización" onClick={() => agregarCotizacion(i.codigo)}><i className="fas fa-plus-square hvr-bounce-in" id="plus"></i></button>
+                      : <button type="button" className="tags" gloss="Añadir a cotización" onClick={() => agregarCotizacion(i)}><i className="fas fa-plus-square hvr-bounce-in" id="plus"></i></button>
                     }
-                    <img src={i.url} className="card-img-top" alt="Imagen producto" id="imagenes-producto" data-bs-toggle="modal" data-bs-target="#producto" style={{ cursor: "pointer" }}/>
-                    <div className="card-body border-top text-start" data-bs-toggle="modal" data-bs-target="#producto" style={{ cursor: "pointer" }}>
+                     <img src={i.url} className="card-img-top" onClick={() => { setNum(1); setModal(i) }} alt="Imagen producto" id="imagenes-producto" data-bs-toggle="modal" data-bs-target="#producto" style={{ cursor: "pointer" }} />
+                    <div className="card-body border-top text-start" onClick={() => { setNum(1); setModal(i) }} data-bs-toggle="modal" data-bs-target="#producto" style={{ cursor: "pointer" }}>
                       <h5 className="card-title color-marca">{i.nombre}</h5>
                       <h5 className="card-title text-black">{i.precio}</h5>
                     </div>
@@ -302,10 +300,10 @@ function Productos() {
                   <div className="card m-auto shadow" style={{ width: "230px" }}>
                     {i[index] !== carritoCompras.find(e => e.nombre === i.nombre)
                       ? <button type="button" className="tags" gloss="Eliminar cotización" onClick={() => eliminarProducto(i.codigo)} ><i className="fas fa-minus-square hvr-bounce-in" style={{ color: "green" }} id="plus"></i></button>
-                      : <button type="button" className="tags" gloss="Añadir a cotización" onClick={() => agregarCotizacion(i.codigo)}><i className="fas fa-plus-square hvr-bounce-in" id="plus"></i></button>
+                      : <button type="button" className="tags" gloss="Añadir a cotización" onClick={() => agregarCotizacion(i)}><i className="fas fa-plus-square hvr-bounce-in" id="plus"></i></button>
                     }
-                   <img src={i.url} className="card-img-top" onClick ={ ()=> {setNum(1);setModal(productosData[index])} } alt="Imagen producto" id="imagenes-producto" data-bs-toggle="modal" data-bs-target="#producto" style={{ cursor: "pointer" }} />
-                    <div className="card-body border-top text-start" onClick ={ ()=>{setNum(1);setModal(productosData[index])}  } data-bs-toggle="modal" data-bs-target="#producto" style={{ cursor: "pointer" }}>
+                     <img src={i.url} className="card-img-top" onClick={() => { setNum(1); setModal(i) }} alt="Imagen producto" id="imagenes-producto" data-bs-toggle="modal" data-bs-target="#producto" style={{ cursor: "pointer" }} />
+                    <div className="card-body border-top text-start" onClick={() => { setNum(1); setModal(i) }} data-bs-toggle="modal" data-bs-target="#producto" style={{ cursor: "pointer" }}>
                       <h5 className="card-title color-marca">{i.nombre}</h5>
                       <h5 className="card-title text-black">{i.precio}</h5>
                     </div>
@@ -322,10 +320,10 @@ function Productos() {
                   <div className="card m-auto shadow" style={{ width: "230px" }}>
                     {i[index] !== carritoCompras.find(e => e.nombre === i.nombre)
                       ? <button type="button" className="tags" gloss="Eliminar cotización" onClick={() => eliminarProducto(i.codigo)} ><i className="fas fa-minus-square hvr-bounce-in" style={{ color: "green" }} id="plus"></i></button>
-                      : <button type="button" className="tags" gloss="Añadir a cotización" onClick={() => agregarCotizacion(i.codigo)}><i className="fas fa-plus-square hvr-bounce-in" id="plus"></i></button>
+                      : <button type="button" className="tags" gloss="Añadir a cotización" onClick={() => agregarCotizacion(i)}><i className="fas fa-plus-square hvr-bounce-in" id="plus"></i></button>
                     }
-                    <img src={i.url} className="card-img-top" alt="Imagen producto" id="imagenes-producto" data-bs-toggle="modal" data-bs-target="#producto" style={{ cursor: "pointer" }} />
-                    <div className="card-body border-top text-start" data-bs-toggle="modal" data-bs-target="#producto" style={{ cursor: "pointer" }}>
+                     <img src={i.url} className="card-img-top" onClick={() => { setNum(1); setModal(i) }} alt="Imagen producto" id="imagenes-producto" data-bs-toggle="modal" data-bs-target="#producto" style={{ cursor: "pointer" }} />
+                    <div className="card-body border-top text-start" onClick={() => { setNum(1); setModal(i) }} data-bs-toggle="modal" data-bs-target="#producto" style={{ cursor: "pointer" }}>
                       <h5 className="card-title color-marca">{i.nombre}</h5>
                       <h5 className="card-title text-black">{i.precio}</h5>
                     </div>
@@ -342,10 +340,10 @@ function Productos() {
                   <div className="card m-auto shadow" style={{ width: "230px" }}>
                     {i[index] !== carritoCompras.find(e => e.nombre === i.nombre)
                       ? <button type="button" className="tags" gloss="Eliminar cotización" onClick={() => eliminarProducto(i.codigo)} ><i className="fas fa-minus-square hvr-bounce-in" style={{ color: "green" }} id="plus"></i></button>
-                      : <button type="button" className="tags" gloss="Añadir a cotización" onClick={() => agregarCotizacion(i.codigo)}><i className="fas fa-plus-square hvr-bounce-in" id="plus"></i></button>
+                      : <button type="button" className="tags" gloss="Añadir a cotización" onClick={() => agregarCotizacion(i)}><i className="fas fa-plus-square hvr-bounce-in" id="plus"></i></button>
                     }
-                   <img src={i.url} className="card-img-top" onClick ={ ()=> {setNum(1);setModal(productosData[index])} } alt="Imagen producto" id="imagenes-producto" data-bs-toggle="modal" data-bs-target="#producto" style={{ cursor: "pointer" }} />
-                    <div className="card-body border-top text-start" onClick ={ ()=>{setNum(1);setModal(productosData[index])}  } data-bs-toggle="modal" data-bs-target="#producto" style={{ cursor: "pointer" }}>
+                     <img src={i.url} className="card-img-top" onClick={() => { setNum(1); setModal(i) }} alt="Imagen producto" id="imagenes-producto" data-bs-toggle="modal" data-bs-target="#producto" style={{ cursor: "pointer" }} />
+                    <div className="card-body border-top text-start" onClick={() => { setNum(1); setModal(i) }} data-bs-toggle="modal" data-bs-target="#producto" style={{ cursor: "pointer" }}>
                       <h5 className="card-title color-marca">{i.nombre}</h5>
                       <h5 className="card-title text-black">{i.precio}</h5>
                     </div>

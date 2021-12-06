@@ -46,7 +46,7 @@ function Contacto() {
                                     <textarea id="comment" name="comment" rows="2" required></textarea>
                             </div>
                             <div className="full">
-                                <button classname="btn" type="submit">Enviar</button>
+                                <button className="btn" type="submit">Enviar</button>
                             </div>
                         </form>
                     </div>
