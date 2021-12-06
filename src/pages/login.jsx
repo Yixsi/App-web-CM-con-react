@@ -57,9 +57,9 @@ function Login() {
         <Layout>
 
             <div className="container mx-auto" >
-                <section className="row d-flex">
-                    <div className="col-10 col-lg-9 mx-auto">
-                        <div className="contenedor">
+                <section className="row">
+                    <div className="col-12 col-lg-12">
+                        <div className="contenedor col-12 col-lg-9">
                             <div className={`container1${on ? " log-in" : ""}`}>
                                 <div className="box"></div>
                                 <div className="container1-forms">
