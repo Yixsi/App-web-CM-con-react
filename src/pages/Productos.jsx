@@ -284,8 +284,8 @@ function Productos() {
                       ? <button type="button" className="tags" gloss="Eliminar cotización" onClick={() => eliminarProducto(i.codigo)} ><i className="fas fa-minus-square hvr-bounce-in" style={{ color: "green" }} id="plus"></i></button>
                       : <button type="button" className="tags" gloss="Añadir a cotización" onClick={() => agregarCotizacion(i.codigo)}><i className="fas fa-plus-square hvr-bounce-in" id="plus"></i></button>
                     }
-                    <img src={i.url} className="card-img-top" alt="Imagen producto" id="imagenes-producto" />
-                    <div className="card-body border-top text-start">
+                    <img src={i.url} className="card-img-top" alt="Imagen producto" id="imagenes-producto" data-bs-toggle="modal" data-bs-target="#producto" style={{ cursor: "pointer" }}/>
+                    <div className="card-body border-top text-start" data-bs-toggle="modal" data-bs-target="#producto" style={{ cursor: "pointer" }}>
                       <h5 className="card-title color-marca">{i.nombre}</h5>
                       <h5 className="card-title text-black">{i.precio}</h5>
                     </div>
