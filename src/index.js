@@ -4,7 +4,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import * as serviceWorker from "./serviceWorker";
 import axios from "axios"
-axios.defaults.baseURL = 'https://ferreteria-carvajal-backend.herokuapp.com/';
+axios.defaults.baseURL = 'http://localhost:4000/';
 
 ReactDOM.render(
   <React.StrictMode>
