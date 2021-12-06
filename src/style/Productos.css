@@ -20,14 +20,20 @@ button{
     color: #f6821f;
     background-color: transparent;
 }
+
+.modal-producto{
+    padding: 0%;
+    margin: 0%;
+}
+
 .modal-header{
     background: #000;
     color: #fff;
 }
 
-.modalProductos-body{
-    height: 80%;
-    width: 80%;
+.image, .ImagenModal, .cardproducto{
+    padding: 0%;
+    margin:0%;
 }
 
 .btn-close{

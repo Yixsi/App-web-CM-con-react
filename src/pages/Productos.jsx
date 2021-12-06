@@ -183,20 +183,20 @@ function Productos() {
             </div>
 
             {/* MODAL PRODUCTO DESCRIPCIÓN */}
-            <div className="modal modalProductos-body  fade " tabIndex="-1" id="producto" aria-hidden="true" aria-labelledby="producto">
-              <div className="modal-dialog modal-dialog-centered">
+            <div className="modal  fade modal-producto" tabIndex="-1" id="producto" aria-hidden="true" aria-labelledby="producto">
+              <div className="modal-dialog modal-lg modal-dialog-centered">
                 <div className="modal-content text-dark">
-                  
-                  <div className="modal-body ">
-                    <div className="closeinfo">
-                      <button type="button" className="btn-close pinfo" data-bs-dismiss="modal" aria-label="Close" style={{ backgroundColor: "white" }}>
-                      </button>
-                    </div>
+                <div className="modal-header">
+                    <h5 className="modal-title" id="detail">Detalle del producto</h5>
+                    <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close" style={{ backgroundColor: "white" }}>
+                    </button>
+                  </div>
+                  <div className="modal-body">
                     <section className="row">
-                        <div class="image col-12 col-md-6 col-lg-6">
-                          <img alt= "ImagenModal" src = {productosModal.url} style = {{heigh: "400px", width: "400px"}}/>
+                        <div className="image col-12 col-md-6 col-lg-6 mx-auto mt-3">
+                          <img className="ImagenModal" alt= "ImagenModal" src = {productosModal.url} style = {{heigh: "300px", width: "250px"}}/>
                         </div>
-                        <div className="card m-auto col-12 col-md-6 col-lg-6 ">
+                        <div className="card cardproducto col-12 col-md-5 col-lg-5 mx-auto">
                           <div className="card-body border-top text-start">
                             <h5 className="card-title color-marca" style={{ fontWeight: "bold"}}>{productosModal.nombre}</h5>
                             <p className="card-text text-black ">
@@ -205,8 +205,8 @@ function Productos() {
                             <h5 className="card-title text-black">{productosModal.precio}</h5>
                             <button disabled = {num === 1}  disable onClick = {()=> setNum(num-1)}><i className="fas fa-minus hvr-push" style={{ paddingRight: "12px" }}></i></button>
                               {num}
-                            <button disabled = {num >= productosModal.cantidad} onClick = {()=> setNum(num+1)}><i className="fas fa-plus hvr-push" style={{ paddingLeft: "12px" }}></i></button>
-                            <p className="stock">En stock:{" "+productosModal.cantidad}</p>
+                            <button disabled = {num >= productosModal.cantidad} onClick = {()=> setNum(num+1)}><i className="fas fa-plus hvr-push" style={{ paddingLeft: "12px", paddingRight: "20px" }}></i></button>
+                            <p className="stock">En stock:{"  "+productosModal.cantidad}</p>
                           </div>
                         </div>
                     </section>
@@ -284,8 +284,8 @@ function Productos() {
                       ? <button type="button" className="tags" gloss="Eliminar cotización" onClick={() => eliminarProducto(i.codigo)} ><i className="fas fa-minus-square hvr-bounce-in" style={{ color: "green" }} id="plus"></i></button>
                       : <button type="button" className="tags" gloss="Añadir a cotización" onClick={() => agregarCotizacion(i.codigo)}><i className="fas fa-plus-square hvr-bounce-in" id="plus"></i></button>
                     }
-                    <img src={i.url} className="card-img-top" alt="Imagen producto" id="imagenes-producto" />
-                    <div className="card-body border-top text-start">
+                    <img src={i.url} className="card-img-top" alt="Imagen producto" id="imagenes-producto" data-bs-toggle="modal" data-bs-target="#producto" style={{ cursor: "pointer" }}/>
+                    <div className="card-body border-top text-start" data-bs-toggle="modal" data-bs-target="#producto" style={{ cursor: "pointer" }}>
                       <h5 className="card-title color-marca">{i.nombre}</h5>
                       <h5 className="card-title text-black">{i.precio}</h5>
                     </div>
