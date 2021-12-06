@@ -165,7 +165,7 @@
 }
 .container1 .form-item.sign-up {
   position: absolute;
-  /* left: -100%; */
+  left: -100%;
   opacity: 0;
 }
 .container1.log-in .box:before {
