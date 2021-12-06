@@ -7,9 +7,6 @@
 *{
   box-sizing: border-box;
 }
-body{
-  background-color: #000;
-}
 
 .container .contacto{
   max-width: vw;
