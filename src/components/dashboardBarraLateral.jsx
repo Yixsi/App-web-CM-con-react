@@ -11,4 +11,4 @@ function dashboard() {
         </div>)
 }
 
-export default dashboard
+export default dashboard 
