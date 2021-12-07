@@ -58,7 +58,7 @@ function Dashboard() {
     }
 
     return (
-        <div style={{ backgroundColor: "#f1f1f1" }}>
+        <div /* style={{ backgroundColor: "#f1f1f1" }} */>
             <Header></Header>
             <div className="container-fluid">
                 <div className="row">
