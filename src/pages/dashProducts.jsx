@@ -27,6 +27,16 @@ function Dashboard() {
             })
     }, [])
 
+    function crearProducto(){
+        const atributos ={
+            nombre, cantidad, categoria, codigo, descripcion, fecha, precio, url, id
+        }
+        axios.post('/api/nuevo-articulo',atributos)
+            .catch(e=>{
+                console.log(e.response);
+            })
+        }
+
     function activarEdicion(codigo) {
         setEditar(true)
         const producto = productosData.filter(e => e.codigo === codigo)
@@ -77,7 +87,7 @@ function Dashboard() {
 
                                 {editar === false
 
-                                    ? <form className="No editar-prueba">
+                                    ? <form className="No editar-prueba" onSubmit = {crearProducto}>
                                         <h2> <font size="15"><b>Crear Producto</b> </font></h2>
 
                                         <div className="element">
@@ -126,8 +136,7 @@ function Dashboard() {
                                     </form>
 
                                     : <form onSubmit={editarProducto} className="Editar-SoloVer">
-
-                                        <h2>Editar Producto</h2>
+                                        <h2> <font size="15"><b>Editar Producto</b> </font></h2>
                                         <div className="element">
                                             <div className="label"><label htmlFor="producto" className="form-label text-dark">Nombre</label></div>
                                             <input type="text" className="form-control" id="producto" aria-describedby="productoactual" value={nombre} onChange={(e) => setNombre(e.target.value)} />
