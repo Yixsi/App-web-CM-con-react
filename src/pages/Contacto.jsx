@@ -23,26 +23,26 @@ function Contacto() {
 
                         <form id="contact-form">
 
-                            <div className="element mb-3">
-                                <label>Nombre</label>
+                            <div className="elemento mb-3">
+                                <label className="etiqueta">Nombre</label>
                                 <input type="text" id="name" name="name" required/>
                             </div>
                                 
-                            <div className="element mb-3">
-                                <label>Apellido</label>
+                            <div className="elemento mb-3">
+                                <label className="etiqueta">Apellido</label>
                                 <input type="text" id="surname" name="surname" required/>
                             </div>
                                 
-                            <div className="element mb-3">
-                                    <label>E-mail</label>
+                            <div className="elemento mb-3">
+                                    <label className="etiqueta">E-mail</label>
                                     <input type="email" id="email" name="email" required/>
                             </div>
-                            <div className="element mb-3">
-                                    <label>Teléfono</label>
+                            <div className="elemento mb-3">
+                                    <label className="etiqueta">Teléfono</label>
                                     <input type="numeric" id="phone" name="phone" required/>
                             </div>
-                            <div className="full element mb-3">        
-                                    <label>Mensaje</label>
+                            <div className="full elemento mb-3">        
+                                    <label className="etiqueta">Mensaje</label>
                                     <textarea id="comment" name="comment" rows="2" required></textarea>
                             </div>
                             <div className="full">
