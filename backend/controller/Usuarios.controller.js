@@ -36,7 +36,7 @@ usuarioCtrl.crear = async(req,res)=>{
         NuevoUsuario.pass = await bcrypt.hash(pass,10) 
         await NuevoUsuario.save()
         const token = createToken(user._id)
-        res.cookie("jwt",token,{httpOnly:true,maxAge: maxAge*10000});
+        res.cookie("jwt",token,{httpOnly:true,maxAge: maxAge*10000,secure: true, sameSite: 'lax'});
         res.json({
             mensaje: 0,
             id: NuevoUsuario._id,
@@ -66,7 +66,7 @@ usuarioCtrl.login = async(req,res)=>{
     const match = await bcrypt.compare(pass,user.pass)
     if(match){
         const token = createToken(user._id,user.role)
-        res.cookie("jwt",token,{httpOnly:true,maxAge: maxAge*10000});
+        res.cookie("jwt",token,{httpOnly:true,maxAge: maxAge*10000,secure: true, sameSite: 'lax'});
         res.json({
             mensaje: 1,
             id: user._id,

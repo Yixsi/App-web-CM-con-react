@@ -12,5 +12,5 @@ const articuloSchema = new Schema({
 });
 
 //COnvertir a modelo
-const Articulos = mongoose.model('Pruebas',articuloSchema)
+const Articulos = mongoose.model('Articulos',articuloSchema)
 export default Articulos;
