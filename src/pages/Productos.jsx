@@ -213,7 +213,7 @@ function Productos() {
                   <div className="modal-footer">
                     {productosModal !== carritoCompras.find(e => e.nombre === productosModal.nombre)
                       ? <button type="button" className="btn2" onClick={() => agregarCotizacion(productosModal)}>Agregar a cotización</button>
-                      : <button type="button" className="btn3" disabled={true} onClick={() => console.log("Hola")}>Agregado</button>}
+                      : <button type="button" className="btn3" disabled={true}>Agregado</button>}
 
                     <button type="button" className="btn btn-secondary " onClick={() => eliminarProducto(productosModal.codigo)}>Cancelar</button>
                   </div>
