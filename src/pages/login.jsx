@@ -46,6 +46,7 @@ function Login() {
             .then(res => {
                 if (res.data.mensaje === 1) {
                     navigate('/')
+                    window.location.reload(false);
                 }
                 else {
                     setMensaje(res.data.mensaje)
