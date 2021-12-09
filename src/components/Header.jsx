@@ -1,11 +1,11 @@
 import React, { useState, useEffect} from "react";
-import { Link, NavLink,useNavigate,useLocation } from 'react-router-dom'
+import { Link, NavLink,useNavigate,/* useLocation */ } from 'react-router-dom'
 import logo from "media/logo.png"
 import axios from "axios"
 
 function Header() {
 
-    const location = useLocation();
+    /* const location = useLocation(); */
     const navigate = useNavigate()
     const [rolIniciarSeccion,setRol] = useState(0);
 
@@ -23,12 +23,9 @@ function Header() {
         axios
         .post("/api/cerrar-sesion")
         .then((res)=>{
-            console.log(res)
-        })
-        if (location.pathname === "/"){
+            navigate("/") 
             window.location.reload(false);
-        } 
-        navigate("/") 
+        })
     }
 
     return (

@@ -29,7 +29,7 @@ function Login() {
         axios.post('/api/nuevo-usuario', atributos)
             .then(res => {
                 if(res.data.mensaje === 0){
-                    navigate("/")
+                    setOn(false)
                 }
                 else{
                     setMensajeRegistrar(res.data.mensaje)
